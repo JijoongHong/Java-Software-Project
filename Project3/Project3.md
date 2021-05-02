@@ -138,19 +138,20 @@
 
 - Album Class의 변수들은 private으로 선언되어 임의로 변경되지 못하도록 하였다.
   
- [Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.009.png![image](https://user-images.githubusercontent.com/63644587/116821074-5b0ce700-abb3-11eb-8a80-affa101e3d64.png)
+  <img width="245" alt="Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 009" src="https://user-images.githubusercontent.com/63644587/116821249-1a619d80-abb4-11eb-85a3-2020b414025f.png">
 
 
 
 - 생성자 Album(String photoInfoFileName): 사진정보 파일이름을 인자로 받아 기술된 사진 정보들로 사진 목록을 생성한다. 이 때 사진 인스턴스의 갯수는 100개로 제한된다. 더불어 사진정보파일로 사진 인스턴스를 생성하도록 하는 getData를 호출한다.
 
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.010.png![image](https://user-images.githubusercontent.com/63644587/116821081-619b5e80-abb3-11eb-960c-565117900197.png)
+  <img width="375" alt="Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 010" src="https://user-images.githubusercontent.com/63644587/116821256-20577e80-abb4-11eb-93de-d969f0fca8d2.png">
+
 
 
 
 - private void getData(String photoInfoFileName) : 사진정보파일을 인자로 받아 파일 객체를 생성하고, 스캐너 객체를 통해 이를 한줄씩 읽는다. 다만 이 때 // 혹은 공백인 경우 주석에 해당하므로 무시하고, 유효한 정보가 있는 줄을 인자로하여 getPhotoInfo를 호출한다. 이는 line 내의 정보를 파싱하고 사진 인스턴스를 생성할 수 있도록 한다. Try-catch 문을 활용하여 만약 사진정보파일이 존재하지 않으면 오류메시지를 출력한다.
 
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.011.png![image](https://user-images.githubusercontent.com/63644587/116821087-66601280-abb3-11eb-9ec1-6e1bfe0825bb.png)
+  ![Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 011](https://user-images.githubusercontent.com/63644587/116821263-26e5f600-abb4-11eb-8433-381b7ae3874c.png)
 
 
 
@@ -162,28 +163,30 @@
 - 더불어 위 세 변수가 모두 true여야만 사진 인스턴스를 생성하도록 하여 오류가 있는 줄을 건너뛰도록 조치하였다. 
 - 이 때 fileNameValidator와 idConflictValidator 메소드를 활용하여 유효성 검사를 수행하였다. 날짜의 경우 따로 메소드를 구현하지 않았는데, dateFormatValidater를 운용한다면 boolean 형식으로 값을 반환할 때 getPhotoInfo내에서 LocalDateTime형으로 파싱하는 작업을 중복수행하여야하고, LocalDateTime형을 반환한다면 참거짓 유무를 알기 어려웠다. 그러므로 검증 과정을 getPhotoInfo 내에서 수행하였다.
   
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.012.png![image](https://user-images.githubusercontent.com/63644587/116821091-6a8c3000-abb3-11eb-971e-344baec10efa.png)
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.012.png![image](https://user-images.githubusercontent.com/63644587/116821274-2f3e3100-abb4-11eb-9cfa-fff5cf490073.png)
 
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.013.png![image](https://user-images.githubusercontent.com/63644587/116821276-32392180-abb4-11eb-89b5-246d4c0f2996.png)
 
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.013.png![image](https://user-images.githubusercontent.com/63644587/116821094-70821100-abb3-11eb-9fe0-e44f38fe912f.png)
 
 
 
     -> 구현 시 시행착오 : trim 메소드를 사용해 문자열 중간의 공백이 제거되지 않았다. 이에 replaceAll메소드를 활용하여 공백을 없애주었다. 그러나 전체 line에 대해 공백을 제거할 경우에 정보가 없는 token을 처리할 때 오류가 발생하여 각기 저장 시에 공백을 삭제하였다. 더불어 기존에는 fileNameValidator에서 문자열을 비교할 때 ==을 사용하였다. Java15버전에서는 이 부분이 정상 작동하였으나 Auto Test의 결과값이 상이하게 출력되어 문제점을 인지하고 equals로 변경하였다.
 
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.014.png![image](https://user-images.githubusercontent.com/63644587/116821099-7546c500-abb3-11eb-958c-e7d9dc419fa2.png)
+  ![Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 014](https://user-images.githubusercontent.com/63644587/116821298-4a10a580-abb4-11eb-82eb-1e35426ab8d6.png)
+
+
 
 
 
 - public int numPhotos() : 사진갯수는 임의로 변경되어서는 안 되는 변수이므로 private으로 선언하고, 위 메소드를 통하여 정보에 접근할 수 있도록 하였다.
 
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.015.png![image](https://user-images.githubusercontent.com/63644587/116821103-7a0b7900-abb3-11eb-8fd0-944a1d861ef4.png)
+  <img width="287" alt="Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 015" src="https://user-images.githubusercontent.com/63644587/116821295-43822e00-abb4-11eb-8ba3-79b5f010c631.png">
 
 
 
 - public Photo getPhoto(int i): 앨범 객체 내의 사진 인스턴스로 구성된 배열은 임의로 변경되어서는 안 되므로 private으로 선언하고, 위 메소드를 통하여 정보에 접근할 수 있도록 하였다.
   
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.016.png![image](https://user-images.githubusercontent.com/63644587/116821106-7d9f0000-abb3-11eb-956a-ef59d9d838f3.png)
+  <img width="704" alt="Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 016" src="https://user-images.githubusercontent.com/63644587/116821303-509f1d00-abb4-11eb-8bce-9073a2e02e98.png">
 
 
 
@@ -193,23 +196,24 @@
 
 - public void addPhotoByFileName(String line) : image파일 이름을 받아 사진 인스턴스를 생성하고 이를 앨범에 저장하는 메소드이다. 입력 line의 형식에 맞추어 “;”를 기준으로 split한 토큰의 마지막인 image파일만을 파싱하도록 하였다. 추후 입력 방식이 바뀌거나 실제 파일을 선택하도록 할 때는 split없이 해당 파일의 gui에서 선택한 파일의 path를 기준으로 사진 인스턴스를 생성하도록 변경할 예정이다.
 
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.017.png![image](https://user-images.githubusercontent.com/63644587/116821109-82fc4a80-abb3-11eb-856b-e89f295fbf97.png)
+  <img width="521" alt="Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 017" src="https://user-images.githubusercontent.com/63644587/116821310-5694fe00-abb4-11eb-9b0a-419ee3cd3dad.png">
 
   
 - public void addPhoto(String line) : image파일로 사진 인스턴스를 추가할 때 사진이름과 카테고리를 함께 입력받아 사진 클래스의 모든 변수가 채워지도록 하는 메소드이다. 입력 line의 형식에 맞추어 “;”를 기준으로 split한 토큰의 해당 정보만을 파싱하도록 하였다. 추후 입력 방식이 바뀌거나 실제 파일을 선택하도록 할 때는 split없이 gui에서 해당 파일을 선택함과 동시에 이름과 카테고리를 입력받아 사진 인스턴스를 생성하도록 할 예정이다.
   
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.018.png![image](https://user-images.githubusercontent.com/63644587/116821113-85f73b00-abb3-11eb-9e0d-c8c98c65d30a.png)
+  <img width="716" alt="Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 018" src="https://user-images.githubusercontent.com/63644587/116821318-5f85cf80-abb4-11eb-980c-4ce2bfafee5b.png">
+
 
 
 - public void delPhoto(int i) : 원하는 위치의 사진 인스턴스를 삭제하는 기능이다. 이 때 Album배열과 같이 Photo 배열 100개를 선언하고, 지울 사진의 위치를 제외한 사진 인스턴스를 새로운 배열에 옮겼다. 이후 Album 배열이 새로운 배열을 가리키게 만듦으로써 garbage collector에 의해 기존 배열이 삭제되도록 하였다. 추후 ArrayList를 공부한 후 해당 기능을 변경할 예정이다.
 
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.019.png![image](https://user-images.githubusercontent.com/63644587/116821118-8b548580-abb3-11eb-87b4-65c02c95e54c.png)
+  <img width="366" alt="Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 019" src="https://user-images.githubusercontent.com/63644587/116821323-644a8380-abb4-11eb-93e2-9747912f8d6e.png">
 
 
 
 - public void exportToTxt(String path) : 메모리 상에 저장되어 있는 사진정보들을 저장하는 메소드이다. Filewriter와 Printwriter 객체를 활용하여 입력받은 path에 사진정보를 담은 txt파일을 생성한다. 이 때 사진 인스턴스에 대한 접근은 getter메소드를 통해 이루어진다. 
 
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.020.png![image](https://user-images.githubusercontent.com/63644587/116821123-93142a00-abb3-11eb-866c-ea3a12073359.png)
+  <img width="949" alt="Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 020" src="https://user-images.githubusercontent.com/63644587/116821325-690f3780-abb4-11eb-88b9-b08b343f5e27.png">
 
 
 
@@ -221,7 +225,8 @@
 
 - Auto Test 결과 예시정답과 동일하게 출력된 것을 알 수 있다.
 
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.021.png![image](https://user-images.githubusercontent.com/63644587/116821129-97d8de00-abb3-11eb-9c8b-574cca11c229.png)
+  ![Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 021](https://user-images.githubusercontent.com/63644587/116821326-6e6c8200-abb4-11eb-8212-059db7bd8765.png)
+
 
 
 
@@ -229,7 +234,8 @@
 
 - 추가구현 메소드의 실행결과를 테스트하기 위하여 작성한 TestMain은 다음과 같다.
   
- Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.022.png![image](https://user-images.githubusercontent.com/63644587/116821135-9c9d9200-abb3-11eb-9fdc-ddd77f72ad04.png)
+  <img width="1005" alt="Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 022" src="https://user-images.githubusercontent.com/63644587/116821331-74faf980-abb4-11eb-87c8-e54f5731e8ba.png">
+
 
 
 
@@ -237,13 +243,14 @@
 
 - 콘솔 출력 결과 정상적으로 작동한 것을 볼 수 있다. 
   
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.023.png![image](https://user-images.githubusercontent.com/63644587/116821140-a1fadc80-abb3-11eb-89f8-371bcbab4954.png)
+  <img width="994" alt="Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 023" src="https://user-images.githubusercontent.com/63644587/116821335-79bfad80-abb4-11eb-8525-b2bbea7a13cf.png">
+
 
 
 
 - txt 파일 역시 정상적으로 생성되었다.
 
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.024.png![image](https://user-images.githubusercontent.com/63644587/116821146-a58e6380-abb3-11eb-8062-d837b07e9d78.png)
+  <img width="872" alt="Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 024" src="https://user-images.githubusercontent.com/63644587/116821340-7debcb00-abb4-11eb-8400-5f62e6378d77.png">
 
 
 
