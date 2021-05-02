@@ -130,23 +130,27 @@
 
 - public String get\_\_\_\_( ): 모든 클래스 내 변수에 대해 호출 시 해당 변수를 반환한다.
 
-  [image](https://user-images.githubusercontent.com/63644587/116820876-3cf2b700-abb2-11eb-989f-8559873db5cc.png)
+ ![Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 008](https://user-images.githubusercontent.com/63644587/116821065-4c263480-abb3-11eb-9832-9845b3e04fbf.png)
+ 
 
 ## 3) Album Class 필수 메소드
 
 - Album Class의 변수들은 private으로 선언되어 임의로 변경되지 못하도록 하였다.
   
- [image](https://user-images.githubusercontent.com/63644587/116820883-43812e80-abb2-11eb-8548-952b4326c255.png)
+ [Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.009.png![image](https://user-images.githubusercontent.com/63644587/116821074-5b0ce700-abb3-11eb-8a80-affa101e3d64.png)
+
 
 
 - 생성자 Album(String photoInfoFileName): 사진정보 파일이름을 인자로 받아 기술된 사진 정보들로 사진 목록을 생성한다. 이 때 사진 인스턴스의 갯수는 100개로 제한된다. 더불어 사진정보파일로 사진 인스턴스를 생성하도록 하는 getData를 호출한다.
 
-  [image](https://user-images.githubusercontent.com/63644587/116820890-4714b580-abb2-11eb-842d-f3706e40dbe1.png)
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.010.png![image](https://user-images.githubusercontent.com/63644587/116821081-619b5e80-abb3-11eb-960c-565117900197.png)
+
 
 
 - private void getData(String photoInfoFileName) : 사진정보파일을 인자로 받아 파일 객체를 생성하고, 스캐너 객체를 통해 이를 한줄씩 읽는다. 다만 이 때 // 혹은 공백인 경우 주석에 해당하므로 무시하고, 유효한 정보가 있는 줄을 인자로하여 getPhotoInfo를 호출한다. 이는 line 내의 정보를 파싱하고 사진 인스턴스를 생성할 수 있도록 한다. Try-catch 문을 활용하여 만약 사진정보파일이 존재하지 않으면 오류메시지를 출력한다.
 
-  [image](https://user-images.githubusercontent.com/63644587/116820893-4bd96980-abb2-11eb-9e27-fb0b3a896b2f.png)
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.011.png![image](https://user-images.githubusercontent.com/63644587/116821087-66601280-abb3-11eb-9ec1-6e1bfe0825bb.png)
+
 
 
     -> 구현 시 시행착오 : try외부에서 파일 클래스과 스캐너 클래스를 선언하였을 때 변수의 scope가 맞지 않아 오류가 발생하여 try문 내부에서 선언하였다. 또한 주석처리의 빈칸을 line.startWith(‘\n’)과 line.startWith(‘’)로 시도하였으나 오류가 발생하여 isEmpty로 변경하였다.
@@ -157,24 +161,29 @@
 - 더불어 위 세 변수가 모두 true여야만 사진 인스턴스를 생성하도록 하여 오류가 있는 줄을 건너뛰도록 조치하였다. 
 - 이 때 fileNameValidator와 idConflictValidator 메소드를 활용하여 유효성 검사를 수행하였다. 날짜의 경우 따로 메소드를 구현하지 않았는데, dateFormatValidater를 운용한다면 boolean 형식으로 값을 반환할 때 getPhotoInfo내에서 LocalDateTime형으로 파싱하는 작업을 중복수행하여야하고, LocalDateTime형을 반환한다면 참거짓 유무를 알기 어려웠다. 그러므로 검증 과정을 getPhotoInfo 내에서 수행하였다.
   
-  [image](https://user-images.githubusercontent.com/63644587/116820899-5431a480-abb2-11eb-82c1-e1af6df3d1bb.png)
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.012.png![image](https://user-images.githubusercontent.com/63644587/116821091-6a8c3000-abb3-11eb-971e-344baec10efa.png)
 
-  [image](https://user-images.githubusercontent.com/63644587/116820901-58f65880-abb2-11eb-8403-1c4a9e8be3f9.png)
+
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.013.png![image](https://user-images.githubusercontent.com/63644587/116821094-70821100-abb3-11eb-9fe0-e44f38fe912f.png)
+
 
 
     -> 구현 시 시행착오 : trim 메소드를 사용해 문자열 중간의 공백이 제거되지 않았다. 이에 replaceAll메소드를 활용하여 공백을 없애주었다. 그러나 전체 line에 대해 공백을 제거할 경우에 정보가 없는 token을 처리할 때 오류가 발생하여 각기 저장 시에 공백을 삭제하였다. 더불어 기존에는 fileNameValidator에서 문자열을 비교할 때 ==을 사용하였다. Java15버전에서는 이 부분이 정상 작동하였으나 Auto Test의 결과값이 상이하게 출력되어 문제점을 인지하고 equals로 변경하였다.
 
-  [image](https://user-images.githubusercontent.com/63644587/116820911-60b5fd00-abb2-11eb-8d85-51be8510fa54.png)
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.014.png![image](https://user-images.githubusercontent.com/63644587/116821099-7546c500-abb3-11eb-958c-e7d9dc419fa2.png)
+
 
 
 - public int numPhotos() : 사진갯수는 임의로 변경되어서는 안 되는 변수이므로 private으로 선언하고, 위 메소드를 통하여 정보에 접근할 수 있도록 하였다.
 
-  [image](https://user-images.githubusercontent.com/63644587/116820914-66134780-abb2-11eb-85fe-74d72285d58c.png)
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.015.png![image](https://user-images.githubusercontent.com/63644587/116821103-7a0b7900-abb3-11eb-8fd0-944a1d861ef4.png)
+
 
 
 - public Photo getPhoto(int i): 앨범 객체 내의 사진 인스턴스로 구성된 배열은 임의로 변경되어서는 안 되므로 private으로 선언하고, 위 메소드를 통하여 정보에 접근할 수 있도록 하였다.
   
-  [image](https://user-images.githubusercontent.com/63644587/116820920-6b709200-abb2-11eb-9da6-c17ec536563b.png)
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.016.png![image](https://user-images.githubusercontent.com/63644587/116821106-7d9f0000-abb3-11eb-956a-ef59d9d838f3.png)
+
 
 
 -> 구현 시 시행착오 : 본인이 작성한 TestMain에서는 The album has N photos를 출력하기 위하여 사진정보 출력 전 numPhotos를 호출하는 코드를 작성하였다. 그러나 Auto Test에서는 해당 코드가 없는 것으로 추정되었고, 초기에는 numPhotos호출 시 위 구문을 출력하도록 하였다. 그러나 main에서 numPhotos만큼 반복하는 코드가 있고, i의 값을 반복 시마다 비교하기 위해 numPhotos를 호출하게 되어 구문이 중복출력되는 문제가 있었다. 이에 getPhoto메소드는 사진정보 출력시에만 사용된다는 점을 고려하여, 과제요구사항에 맞추고자 첫번째 사진정보를 반환할 때 사진의 갯수도 함께 출력하도록 하였다. 
@@ -183,20 +192,24 @@
 
 - public void addPhotoByFileName(String line) : image파일 이름을 받아 사진 인스턴스를 생성하고 이를 앨범에 저장하는 메소드이다. 입력 line의 형식에 맞추어 “;”를 기준으로 split한 토큰의 마지막인 image파일만을 파싱하도록 하였다. 추후 입력 방식이 바뀌거나 실제 파일을 선택하도록 할 때는 split없이 해당 파일의 gui에서 선택한 파일의 path를 기준으로 사진 인스턴스를 생성하도록 변경할 예정이다.
 
-  [image](https://user-images.githubusercontent.com/63644587/116820930-73303680-abb2-11eb-8cc6-5c32808660e5.png)
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.017.png![image](https://user-images.githubusercontent.com/63644587/116821109-82fc4a80-abb3-11eb-856b-e89f295fbf97.png)
+
   
 - public void addPhoto(String line) : image파일로 사진 인스턴스를 추가할 때 사진이름과 카테고리를 함께 입력받아 사진 클래스의 모든 변수가 채워지도록 하는 메소드이다. 입력 line의 형식에 맞추어 “;”를 기준으로 split한 토큰의 해당 정보만을 파싱하도록 하였다. 추후 입력 방식이 바뀌거나 실제 파일을 선택하도록 할 때는 split없이 gui에서 해당 파일을 선택함과 동시에 이름과 카테고리를 입력받아 사진 인스턴스를 생성하도록 할 예정이다.
   
-  [image](https://user-images.githubusercontent.com/63644587/116820936-79261780-abb2-11eb-97ad-c7501e2e76e8.png)
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.018.png![image](https://user-images.githubusercontent.com/63644587/116821113-85f73b00-abb3-11eb-9e0d-c8c98c65d30a.png)
+
 
 - public void delPhoto(int i) : 원하는 위치의 사진 인스턴스를 삭제하는 기능이다. 이 때 Album배열과 같이 Photo 배열 100개를 선언하고, 지울 사진의 위치를 제외한 사진 인스턴스를 새로운 배열에 옮겼다. 이후 Album 배열이 새로운 배열을 가리키게 만듦으로써 garbage collector에 의해 기존 배열이 삭제되도록 하였다. 추후 ArrayList를 공부한 후 해당 기능을 변경할 예정이다.
 
-  [image](https://user-images.githubusercontent.com/63644587/116820941-804d2580-abb2-11eb-80c0-f3875ad099ab.png)
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.019.png![image](https://user-images.githubusercontent.com/63644587/116821118-8b548580-abb3-11eb-87b4-65c02c95e54c.png)
+
 
 
 - public void exportToTxt(String path) : 메모리 상에 저장되어 있는 사진정보들을 저장하는 메소드이다. Filewriter와 Printwriter 객체를 활용하여 입력받은 path에 사진정보를 담은 txt파일을 생성한다. 이 때 사진 인스턴스에 대한 접근은 getter메소드를 통해 이루어진다. 
 
-  [image](https://user-images.githubusercontent.com/63644587/116820946-86db9d00-abb2-11eb-8e87-fd4e5703b9db.png)
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.020.png![image](https://user-images.githubusercontent.com/63644587/116821123-93142a00-abb3-11eb-866c-ea3a12073359.png)
+
 
 
 - sort메소드 : Arrays.sort( )메소드를 통해 구현할 수 없었고, 클래스 내 특정 변수를 기준으로 정렬해야 하므로 어려움이 따랐다. 우선 method signature만 구현 해놓은 다음 추후 ArrayList와 Compartor를 학습한 후에 구현할 예정이다. 
@@ -207,26 +220,30 @@
 
 - Auto Test 결과 예시정답과 동일하게 출력된 것을 알 수 있다.
 
-  [image](https://user-images.githubusercontent.com/63644587/116820951-8e02ab00-abb2-11eb-9b36-dbd65b428ef1.png)
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.021.png![image](https://user-images.githubusercontent.com/63644587/116821129-97d8de00-abb3-11eb-9c8b-574cca11c229.png)
+
 
 
 ## 2) 추가구현 메소드 실행결과
 
 - 추가구현 메소드의 실행결과를 테스트하기 위하여 작성한 TestMain은 다음과 같다.
   
- [image](https://user-images.githubusercontent.com/63644587/116820959-95c24f80-abb2-11eb-9f1c-5bd53992a4f0.png)
+ Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.022.png![image](https://user-images.githubusercontent.com/63644587/116821135-9c9d9200-abb3-11eb-9fdc-ddd77f72ad04.png)
+
 
 
 기존 사진데이터로 앨범과 사진 인스턴스를 생성하고, path를 인자로 하여 사진 인스턴스를 추가로 생성하였다. 이후 해당 인스턴스에 대해 카테고리와 이름을 추가로 지정해주었다. 더불어 파일이름, 카테고리, 사진이름을 인자로 하여 사진을 추가하였다. 이후에 3번째 사진을 삭제하였고 이 결과를 txt파일로 저장하였다. 
 
 - 콘솔 출력 결과 정상적으로 작동한 것을 볼 수 있다. 
   
-  [image](https://user-images.githubusercontent.com/63644587/116820966-9c50c700-abb2-11eb-832d-a269d51b7027.png)
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.023.png![image](https://user-images.githubusercontent.com/63644587/116821140-a1fadc80-abb3-11eb-89f8-371bcbab4954.png)
+
 
 
 - txt 파일 역시 정상적으로 생성되었다.
 
-  [Uploading image.png…]()
+  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.024.png![image](https://user-images.githubusercontent.com/63644587/116821146-a58e6380-abb3-11eb-8062-d837b07e9d78.png)
+
 
 
 
