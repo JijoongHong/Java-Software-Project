@@ -1,48 +1,35 @@
-﻿**2021소프트웨어프로젝트**
-
-**프로젝트 3 – 사진앨범 프로그램**
+# 프로젝트 3 – 사진앨범 프로그램
 
 
+# **목 차**
 
-![](Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.001.jpeg)
+## **1. 프로그램 구조설계…………………………………………….…………….3**
 
-**중앙대학교**
+  ## **1) Photo Class………..……….…………..……….………..……….……..…………….………….3**
 
-**소프트웨어프로젝트 03 분반**
+  ## **2) Album Class………..……….…………..……….………..……….……..……........................4**
 
-**20176963 홍지중**
+## **2. Class 구현……………………………………….......................................6**
 
-**목 차**
+  ## **1) Photo Class 필수 메소드….……….………..……….……..…………………………….....6**
 
-**1. 프로그램 구조설계…………………………………………….…………….3**
+  ## **2) Photo Class 추가구현 메소드 ……..…..………..………............................................7**
 
-**1) Photo Class………..……….…………..……….………..……….……..…………….………….3**
+  ## **3) Album Class 필수 메소드….……….………..……….……..……………………………....7**
 
-**2) Album Class………..……….…………..……….………..……….……..……........................4**
+  ## **4) Album Class 추가구현 메소드 ……..……………………………….………..……….....10**
 
-**2. Class 구현……………………………………….......................................6**
+## **3. 실행결과………………………………………........................................12**
 
-**1) Photo Class 필수 메소드….……….………..……….……..…………………………….....6**
+  ## **1) Auto Test 결과….……….………..……….……..…………………………….....................12**
 
-**2) Photo Class 추가구현 메소드 ……..…..………..………............................................7**
+  ## **2) 추가구현 메소드 실행결과……..………………………………………………..……….....12**
 
-**3) Album Class 필수 메소드….……….………..……….……..……………………………....7**
+#
 
-**4) Album Class 추가구현 메소드 ……..……………………………….………..……….....10**
+# 1. 프로그램 구조설계
 
-**3. 실행결과………………………………………........................................12**
-
-**1) Auto Test 결과….……….………..……….……..…………………………….....................12**
-
-**2) 추가구현 메소드 실행결과……..………………………………………………..……….....12**
-
-**4. 원본소스코드………………………………………..………………………14**
-
-**5. 자체평가표……………………………………………………………………20**
-
-` `**TOC \o "1-3" \h \z \u 1. 프로그램 구조설계**
-
-\1) Photo Class
+## 1) Photo Class
 
 - Photo Class는 앨범 속에 저장된 하나의 사진을 표현하는 객체이다. 그러므로 각 사진의 정보에 해당하는 데이터 필드가 필요하다. 
 - 데이터 : 데이터는 문자열로 구성되며, 앨범추가시간을 기준으로 사진을 식별할 수 있는 식별자(id), 사진의 이름(photoName), 앨범에 추가된 시간(addTime), 사진의 분류(categoty), 파일명(imageFileName)으로 구성된다. 
@@ -56,10 +43,10 @@
 
 - 이를 정리하면 다음과 같다.
 
-|<p>**<Class name>**</p><p>Photo</p>|
-| :- |
-|<p>**<Data field>**</p><p>id: String</p><p>photoName: String</p><p>addTime: String</p><p>categoty: String</p><p>imageFileName: String</p>|
-|<p>**<Constructors>**</p><p>Photo(id: String, photoName: String, addTime: LocalDateTime, categoty: String, imageFileName: String)</p><p>Photo(imageFileName : String)</p><p>Photo(imageFileName : String, PhotoName : String, category : String)</p><p></p><p>**<Methods>**</p><p>print( )</p><p>setCategory(categoty: String)</p><p>setPhotoName(PhotoName: String)</p><p>getId ( ): String</p><p>getPhotoName ( ): String</p><p>getAddTime ( ): String</p><p>getCategoty ( ): String</p><p>getImageFileName ( ): String</p>|
+  |<p>**<Class name>**</p><p>Photo</p>|
+  | :- |
+  |<p>**<Data field>**</p><p>id: String</p><p>photoName: String</p><p>addTime: String</p><p>categoty: String</p><p>imageFileName: String</p>|
+  |<p>**<Constructors>**</p><p>Photo(id: String, photoName: String, addTime: LocalDateTime, categoty: String, imageFileName: String)</p><p>Photo(imageFileName :  String)</p><p>Photo(imageFileName : String, PhotoName : String, category : String)</p><p></p><p>**<Methods>**</p><p>print( )</p><p>setCategory(categoty: String)  </p><p>setPhotoName(PhotoName: String)</p><p>getId ( ): String</p><p>getPhotoName ( ): String</p><p>getAddTime ( ): String</p><p>getCategoty ( ): String</p>  <p>getImageFileName ( ): String</p>|
 
 
 
@@ -70,7 +57,7 @@
 
 
 
-\2) Album Class
+## 2) Album Class
 
 - Album 클래스는 사진 객체들을 통합적으로 관리하는 클래스이다. 
 - 데이터 : 데이터는 사진 객체들을 여러개 관리하므로 Photo클래스로 이루어진 배열(Album)과 전체 사진 개수를 표현하는 numOfPhotos로 구성된다.
@@ -107,9 +94,9 @@
 
 
 
-**2. Class 구현**
+# 2. Class 구현
 
-\1) Photo Class 필수 메소드
+## 1) Photo Class 필수 메소드
 
 - 변수 : Photo Class의 변수들은 private으로 선언되어 임의로 변경되지 못하도록 하였다.
 
@@ -135,7 +122,7 @@
 
 자동 생성된 설명](Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.005.png)
 
-\2) Photo Class 추가구현 메소드
+## 2) Photo Class 추가구현 메소드
 
 - Photo(String imageFileName, String PhotoName, String category) : 생성자를 오버로딩하여 image 파일이름과 함께 사진이름, 카테고리를 입력받아 사진 인스턴스를 생성한다. 
 
@@ -155,7 +142,7 @@
 
 자동 생성된 설명](Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.008.png)
 
-\3) Album Class 필수 메소드
+## 3) Album Class 필수 메소드
 
 - Album Class의 변수들은 private으로 선언되어 임의로 변경되지 못하도록 하였다.
 
@@ -211,7 +198,7 @@
 
 -> 구현 시 시행착오 : 본인이 작성한 TestMain에서는 The album has N photos를 출력하기 위하여 사진정보 출력 전 numPhotos를 호출하는 코드를 작성하였다. 그러나 Auto Test에서는 해당 코드가 없는 것으로 추정되었고, 초기에는 numPhotos호출 시 위 구문을 출력하도록 하였다. 그러나 main에서 numPhotos만큼 반복하는 코드가 있고, i의 값을 반복 시마다 비교하기 위해 numPhotos를 호출하게 되어 구문이 중복출력되는 문제가 있었다. 이에 getPhoto메소드는 사진정보 출력시에만 사용된다는 점을 고려하여, 과제요구사항에 맞추고자 첫번째 사진정보를 반환할 때 사진의 갯수도 함께 출력하도록 하였다. 
 
-\4) Album Class 추가구현 메소드
+## 4) Album Class 추가구현 메소드
 
 - public void addPhotoByFileName(String line) : image파일 이름을 받아 사진 인스턴스를 생성하고 이를 앨범에 저장하는 메소드이다. 입력 line의 형식에 맞추어 “;”를 기준으로 split한 토큰의 마지막인 image파일만을 파싱하도록 하였다. 추후 입력 방식이 바뀌거나 실제 파일을 선택하도록 할 때는 split없이 해당 파일의 gui에서 선택한 파일의 path를 기준으로 사진 인스턴스를 생성하도록 변경할 예정이다.
 
@@ -239,9 +226,9 @@
 
 - sort메소드 : Arrays.sort( )메소드를 통해 구현할 수 없었고, 클래스 내 특정 변수를 기준으로 정렬해야 하므로 어려움이 따랐다. 우선 method signature만 구현 해놓은 다음 추후 ArrayList와 Compartor를 학습한 후에 구현할 예정이다. 
 
-**3. 실행결과**
+# 3. 실행결과
 
-\1) Auto Test 결과
+## 1) Auto Test 결과
 
 - Auto Test 결과 예시정답과 동일하게 출력된 것을 알 수 있다.
 
@@ -249,7 +236,7 @@
 
 자동 생성된 설명](Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.021.png)
 
-\2) 추가구현 메소드 실행결과
+## 2) 추가구현 메소드 실행결과
 
 - 추가구현 메소드의 실행결과를 테스트하기 위하여 작성한 TestMain은 다음과 같다.
 
@@ -269,33 +256,4 @@
 
 ![](Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.024.png)
 
-
-
-**4. 원본 소스코드 – Photo Class**
-
-|<p>import java.time.LocalDateTime;</p><p>import java.time.format.DateTimeFormatter;</p><p></p><p>public class Photo {</p><p></p><p>`	`private String id;</p><p>`	`private String photoName;</p><p>`	`private String addTime;</p><p>`	`private String category;</p><p>`	`private String imageFileName;</p><p>	</p><p>`	`Photo(String imageFileName){</p><p>`		`this.imageFileName = imageFileName;</p><p>`		`LocalDateTime now = LocalDateTime.now();</p><p>`		`DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd\_HH:mm:ss:SSS");</p><p>`		`this.addTime = now.format(formatter).toString();</p><p>`		`this.id = "IMG"+this.addTime;</p><p>`	`}</p><p>	</p><p>`	`Photo(String imageFileName, String photoName, String category){</p><p>`		`this.imageFileName = imageFileName;</p><p>`		`LocalDateTime now = LocalDateTime.now();</p><p>`		`DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd\_HH:mm:ss:SSS");</p><p>`		`this.addTime = now.format(formatter).toString();</p><p>`		`this.id = "IMG"+this.addTime;</p><p>`		`this.category = category;</p><p>`		`this.photoName = photoName;</p><p>`	`}</p><p>	</p><p>`	`Photo(String id, String photoName, LocalDateTime addTime, String category, String imageFileName){</p><p>`		`this.id = id;</p><p>`		`this.photoName = photoName;</p><p>`		`LocalDateTime time = addTime;</p><p>`		`DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd\_HH:mm:ss:SSS");</p><p>`		`this.addTime = time.format(formatter).toString();</p><p>`		`this.category = category;</p><p>`		`this.imageFileName = imageFileName;</p><p>`	`}</p><p>	</p><p></p><p>	</p><p>`	`public void print() {</p><p>`		`System.out.print(this.id+";"+this.photoName+";"+this.addTime+";"+</p><p>`						`this.category+";"+this.imageFileName+";\n");</p><p>`	`}</p><p>	</p><p>`	`//-----------추가 구현 사항-----------//</p><p>	</p><p>`	`public void setCategory(String category) {</p><p>`		`this.category = category;</p><p>`	`}</p><p>	</p><p>`	`public void setPhotoName(String photoName) {</p><p>`		`this.photoName = photoName;</p><p>`	`}</p><p>	</p><p>`	`public String getId() {</p><p>`		`return this.id;</p><p>`	`}</p><p>	</p><p>`	`public String getPhotoName() {</p><p>`		`return this.photoName;</p><p>`	`}</p><p>	</p><p>`	`public String getAddTime() {</p><p>`		`return this.addTime;</p><p>`	`}</p><p>	</p><p>`	`public String getCategory() {</p><p>`		`return this.category;</p><p>`	`}</p><p>	</p><p>`	`public String getImageFileName() {</p><p>`		`return this.imageFileName;</p><p>`	`}</p><p>	</p><p>}</p><p></p>|
-| :- |
-
-
-
-**4. 원본 소스코드 – Album Class**
-
-|<p>import java.io.\*;</p><p>import java.time.LocalDateTime;</p><p>import java.time.format.DateTimeFormatter;</p><p>import java.time.format.DateTimeParseException;</p><p>import java.util.Scanner;</p><p></p><p>public class Album {</p><p></p><p>`	`private Photo[] Album;</p><p>`	`private int numOfPhotos;</p><p>	</p><p>`	`Album(String photoInfoFileName){</p><p>`		`this.Album = new Photo[100];</p><p>`		`this.numOfPhotos = 0;</p><p>`		`this.getData(photoInfoFileName);</p><p>`	`}</p><p>	</p><p>`	`private void getData(String photoInfoFileName) {</p><p>`		`try {</p><p>`			`File file = new File(photoInfoFileName);</p><p>`			`Scanner input = new Scanner(file);</p><p>`			`while (input.hasNext()) {</p><p>`				`String line = input.nextLine();</p><p>`				`if(line.startsWith("//") || line.isEmpty()) {</p><p>`					`continue;</p><p>`				`}else {</p><p>`					`getPhotoInfo(line);</p><p>`				`}</p><p>`			`}</p><p>`			`input.close();</p><p>`		`}</p><p>`		`catch(Exception e) {</p><p>`			`System.*out*.println("Unknown Album data File");</p><p>`		`} </p><p>`	`}</p><p></p><p></p><p></p><p></p><p></p><p>`	`private void getPhotoInfo(String line) {</p><p>`		`String[] tokens = line.split(";");</p><p>`		`String id = tokens[0].replaceAll(" ", "");</p><p>`		`String photoName = tokens[1].replaceAll(" ", "");</p><p>`		`boolean isCorrectDateFormat;</p><p>`		`LocalDateTime addTime = null;</p><p>`		`try {</p><p>`			`DateTimeFormatter formatter = </p><p>`                                   `DateTimeFormatter.*ofPattern*("yyyy-MM-dd\_HH:mm:ss:SSS");</p><p>`			`addTime = LocalDateTime.*parse*(tokens[2].replaceAll(" ", ""), formatter);</p><p>`			`isCorrectDateFormat = true;</p><p>`		`}catch (DateTimeParseException e) {</p><p>`			`isCorrectDateFormat = false;</p><p>`			`System.*out*.println("Wrong Date Format : Skip the input line : "+line);</p><p>			</p><p>`		`}</p><p>`		`String category = tokens[3].replaceAll(" ", "");</p><p>`		`String imageFileName = tokens[4].replaceAll(" ", "");</p><p>		</p><p>`		`boolean isFileNameExist = fileNameValidator(imageFileName);</p><p>`		`boolean isConflict = idConflictValidator(id);</p><p>`		`if (isFileNameExist == false && isCorrectDateFormat == true) {</p><p>`			`System.*out*.println("No Image File : Skip the input line : "+line);</p><p>`		`};</p><p>`		`if (isConflict == true && isFileNameExist == true) {</p><p>`			`System.*out*.println("ID Conflict (a photo with the same ID already exist) : </p><p>`                                             `Skip the input line : "+line);</p><p>`		`};</p><p>`		`if (isCorrectDateFormat == true && isFileNameExist == true && isConflict == false) {</p><p>`			`Album[this.numOfPhotos++] = new Photo(id, photoName,</p><p>`                                    `addTime, category, imageFileName);</p><p>`		`}</p><p>`	`}</p><p>	</p><p>`	`public int numPhotos() {</p><p>`		`return this.numOfPhotos;</p><p>`	`}</p><p>	</p><p>`	`public Photo getPhoto(int i) {</p><p>`		`if (i == 0)</p><p>`			`System.*out*.println("The album has "+this.numOfPhotos+" photos");</p><p>		</p><p>`		`return Album[i];</p><p>`	`}</p><p>	</p><p>`	`//-----------추가 구현 사항-----------//</p><p>	</p><p>`	`private boolean fileNameValidator(String imageFileName) {</p><p>`		`if(imageFileName.equals("")) {</p><p>`			`return false;</p><p>`		`}else return true;</p><p>		 </p><p>`	`}</p><p>	</p><p>`	`private boolean idConflictValidator(String id) {</p><p>`		`for(int i = 0; i<this.numOfPhotos; i++) {</p><p>`			`if(Album[i].getId().equals(id)) return true;</p><p>`		`}</p><p>`		`return false;</p><p>`	`}</p><p>	</p><p>`	`public void addPhotoByFileName(String line) {</p><p>`		`String[] tokens = line.split(";");</p><p>`		`String fileName = tokens[tokens.length-1];</p><p>`		`Album[this.numOfPhotos++] = new Photo(fileName);</p><p>`	`}</p><p>	</p><p>	</p><p>`	`public void addPhoto(String line) {</p><p>`		`String[] tokens = line.split(";");</p><p>`		`String fileName = tokens[tokens.length-1];</p><p>`		`String photoName = tokens[1].replaceAll(" ", "");</p><p>`		`String category = tokens[3].replaceAll(" ", "");</p><p>`		`Album[this.numOfPhotos++] = new Photo(fileName, photoName, category);</p><p>`	`}</p><p>	</p><p>`	`public void delPhoto(int i) {</p><p>`		`Photo[] temp = new Photo[100];</p><p>`		`int j=0,flag=0;</p><p>		</p><p>`		`while (j < numOfPhotos) {</p><p>`			`if (i == j) {</p><p>`				`j++;</p><p>`				`flag=1;</p><p>`			`}</p><p>`			`else if(flag==1){</p><p>`				`temp[j-1] = Album[j];</p><p>`				`j++;</p><p>				</p><p>`			`}else {</p><p>`				`temp[j] = Album[j];</p><p>`				`j++;</p><p>`			`}</p><p>`		`}</p><p>`		`numOfPhotos--;</p><p>`		`Album = temp;</p><p>`	`}</p><p>	</p><p>`	`public void exportToTxt(String path) throws IOException{</p><p>`		`FileWriter fileWriter = new FileWriter(path);</p><p>`		`PrintWriter printWriter = new PrintWriter(fileWriter);</p><p>`		`for(int i = 0; i < numOfPhotos; i++) {</p><p>			</p><p>`			`printWriter.print(Album[i].getId()+";"+Album[i].getPhotoName()+";"+Album[i].getAddTime()</p><p>`					`+";"+Album[i].getCategory()+";"+Album[i].getImageFileName()+";\n");</p><p>`		`}</p><p>`		`printWriter.close();</p><p>`	`}</p><p>	</p><p>	</p><p>`	`public void sortById() {</p><p>`		`//ArrayList와 Compartor 통해 추후 구현예정 </p><p>`	`}</p><p>	</p><p>`	`public void sortByCategory() {</p><p>`		`//ArrayList와 Compartor 통해 추후 구현예정 </p><p>`	`}</p><p>	</p><p>`	`public void sortByPhotoName() {</p><p>`		`//ArrayList와 Compartor 통해 추후 구현예정 </p><p>`	`}</p><p>	</p><p></p>|
-| :- |
-
-
-
-**5. 자체평가표** 
-
-평 가 표
-
-|평가 항목|<p>학생 자체 평가 </p><p>(리포트 해당 부분 표시 및 </p><p>간단한 의견)</p>|평가 (빈칸)|<p>점수</p><p>(빈칸)</p>|
-| :-: | :-: | :-: | :-: |
-|<p></p><p>기본 동작</p><p>-autotest 결과화면</p><p></p>|autotest 및 자체 추가 메소드에 대한 기본 동작 검증 결과 정상적으로 출력되었음 - 12p |||
-|<p>설계 사항</p><p>- 설계 착안점</p><p>- 사용한 클래스 설명</p><p>- 시행착오 및 해결책</p>|<p></p><p>설계 착안점 : 클래스 별 구조설계 시 “설계 중 고민사항”을 추가하여 설명 – 3~6p</p><p></p><p>클래스 설명 : 6p부터 각 클래스 별 필수요소 및 자발적으로 추가한 요소들을 설명 – 6~11p</p><p></p><p>시행착오 및 해결책 : 클래스 설명 시 “구현 시 시행착오”를 추가하여 설명 – 6~11p</p><p></p>|||
-|<p></p><p>본인 인증</p><p></p><p></p>|실행 결과에서 autotest의 학번, TestMain에서 새로 추가한 파일에 본인의 이름을 추가함으로써 인증 -12p|||
-|기타|<p></p><p></p><p></p>|||
-|총평/계|<p></p><p>설계와 구현, 실행결과를 나누어서 설명하였으며</p><p>필수 메소드와 추가설계 메소드를 분리하여 채점자의 편의성을 높히고자 노력하였음 </p><p></p>|||
-
-` `PAGE 3
 
