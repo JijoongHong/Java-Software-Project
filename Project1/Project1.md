@@ -13,9 +13,11 @@
 # 1. 실행 시간 측정 프로그램 검증 
 ## 1) eclipse를 통한 프로젝트 및 ExecTime 클래스 생성 
 - Project1 프로젝트 생성 
+
   ![image](https://user-images.githubusercontent.com/63644587/116820193-a7095d00-abae-11eb-9088-9413c2a15784.png)
 
 - ExecTime 클래스 생성
+
   ![image](https://user-images.githubusercontent.com/63644587/116820195-aa044d80-abae-11eb-9252-2ff2999ec8a8.png)
 
 
@@ -46,6 +48,7 @@
 - 검증에는 실행 시간을 측정할 65535를 포함하여, 10~100000자리의 임의의 숫자, 16의 배수를 변환하였다. 
 
 - Eclipse 환경에서 실행하기 위해 작성한 d2x( ) 메소드는 다음과 같다. 
+
   ![image](https://user-images.githubusercontent.com/63644587/116820223-d5873800-abae-11eb-9c79-f8fb5c6009d5.png)
 
 
@@ -99,6 +102,7 @@
 
 
 ## 2) 실행 결과
+
   <img width="893" alt="스크린샷 2021-05-03 오전 1 30 59" src="https://user-images.githubusercontent.com/63644587/116820293-37e03880-abaf-11eb-81a2-d55938d893c0.png">
 
 
