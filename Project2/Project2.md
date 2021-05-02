@@ -1,53 +1,37 @@
-﻿**2021소프트웨어프로젝트**
+# 프로젝트 2 – Java 및 C 프로그램 스타일 비교
 
-**프로젝트 2 – Java 및 C 프로그램 스타일 비교**
+# 목 차
+
+## **1. Java Style 프로그램 작성**
+
+  ## **1) rectangle.c 분석**
+
+  ## **2) 프로젝트 및 클래스 생성**
+
+  ## **3) 실행확인**
+
+## **2. C와 Java 프로그래밍 방식 비교**
+
+  ## **1) 비교표**
+
+  ## **2) 비교설명**
 
 
 
-![](Aspose.Words.e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e.001.jpeg)
+# 1.	Java
 
-**중앙대학교**
-
-**소프트웨어프로젝트 03 분반**
-
-**20176963 홍지중**
-
-**목 차**
-
-**1. Java Style 프로그램 작성………………………………………………….3**
-
-**1) rectangle.c 분석………..……….…………..……….………..……….……..………………….3**
-
-**2) 프로젝트 및 클래스 생성………..……….…………..……….………..……….……..……...4**
-
-**3) 실행확인………..……….…………..……….………..………………….……..………………….6**
-
-**2. C와 Java 프로그래밍 방식 비교………………………………………...7**
-
-**1) 비교표………..……….…………..……….………..……….……..……………………………....7**
-
-**2) 비교설명……..……….…………..……….………..……….……..……………………………....7**
-
-**3. 원본소스코드………………………………………..………………………10**
-
-**4. 자체평가표……………………………………………………………………12**
-
-` `**TOC \o "1-3" \h \z \u [1.	Java](#_Toc57517999) Style 프로그램 작성**
-
-\1) ractangle.c 분석
+## 1) ractangle.c 분석
 
 - 이 프로그램은 임의의 사각형을 만들어 크기 및 모양 비교, 크기 조정, 출력의 기능을 한다.
 - 사각형의 정보를 표현 : 구조체를 정의하여 밑변과 높이의 정보를 저장할 수 있도록 한다.
 
-![텍스트이(가) 표시된 사진
+  <img width="145" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 002" src="https://user-images.githubusercontent.com/63644587/116820549-b7bad280-abb0-11eb-8db3-139d3b79df46.png">
 
-자동 생성된 설명](Aspose.Words.e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e.002.png)
 
 - 각 기능을 하는 함수들을 미리 정의하여 main( )을 통해 호출할 수 있도록 한다.
 
-![텍스트이(가) 표시된 사진
+  <img width="433" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 003" src="https://user-images.githubusercontent.com/63644587/116820554-bb4e5980-abb0-11eb-949e-ca76f626daea.png">
 
-자동 생성된 설명](Aspose.Words.e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e.003.png)
 
 - main함수
 
@@ -57,19 +41,23 @@
 
 주어진 작업을 수행한다. 
 
-![텍스트이(가) 표시된 사진
 
-자동 생성된 설명](Aspose.Words.e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e.004.png)
+  <img width="406" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 004" src="https://user-images.githubusercontent.com/63644587/116820559-c0130d80-abb0-11eb-86f6-ac0a86419db4.png">
 
-\2) eclipse를 통한 프로젝트 및 Rectangle, TestRactangle 클래스 생성
+
+## 2) eclipse를 통한 프로젝트 및 Rectangle, TestRactangle 클래스 생성
 
 - Project2 프로젝트 생성
 
-![](Aspose.Words.e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e.005.png)
+
+  ![Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 005](https://user-images.githubusercontent.com/63644587/116820562-c43f2b00-abb0-11eb-8e04-99d0209e6d63.png)
+
 
 - Rectangle 클래스 생성
 
-![](Aspose.Words.e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e.006.png)
+
+  ![Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 006](https://user-images.githubusercontent.com/63644587/116820570-cd2ffc80-abb0-11eb-97dc-a365aea869cb.png)
+
 
 \- Rectangle 클래스는 사각형의 밑변과 높이를 규정하고, 이와 관련한 여러 메소드로 구성된다. 
 
@@ -86,13 +74,15 @@
 
 \- 이를 코드로 구현하면 다음과 같다.
 
-![텍스트이(가) 표시된 사진
 
-자동 생성된 설명](Aspose.Words.e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e.007.png)
+  <img width="520" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 007" src="https://user-images.githubusercontent.com/63644587/116820578-d3be7400-abb0-11eb-9031-5eac0d9884ff.png">
+
 
 - TestRactangle 클래스 생성 
 
-![](Aspose.Words.e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e.008.png)
+
+  ![Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 008](https://user-images.githubusercontent.com/63644587/116820582-d91bbe80-abb0-11eb-87ed-66e359774fbf.png)
+
 
 \- C프로그램의 main역할을 하는 TestRectangle 클래스를 생성하여 main함수로 앞서 생성한 Rectangle 클래스의 동작을 확인할 수 있도록 한다. 
 
@@ -104,15 +94,14 @@
 
 \- 이를 코드로 표현하면 다음과 같다.
 
-![텍스트이(가) 표시된 사진
 
-자동 생성된 설명](Aspose.Words.e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e.009.png)
+  <img width="544" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 009" src="https://user-images.githubusercontent.com/63644587/116820602-e9339e00-abb0-11eb-9ca1-655a5ec19d1f.png">
 
-\3) 실행확인
 
-![텍스트이(가) 표시된 사진
+## 3) 실행확인
 
-자동 생성된 설명](Aspose.Words.e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e.010.png)
+  <img width="217" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 010" src="https://user-images.githubusercontent.com/63644587/116820609-ee90e880-abb0-11eb-83fe-44af13d7d0e1.png">
+
 
 - 첫 번째 결과는 1x2와 2x1크기의 사각형의 모양을 비교하는 작업을 수행하였으며, 두 사각형의 모양은 다르므로 올바르게 결과가 출력되었다.
 - 두 번째 결과는 1x2와 2x1크기의 사각형의 넓이를 비교하는 작업을 수행하였으며, 두 사각형의 넓이는 동일하므로 올바르게 결과가 출력되었다. 
@@ -120,9 +109,9 @@
 
 
 
-**2. C와 Java 프로그래밍 방식 비교**
+# 2. C와 Java 프로그래밍 방식 비교
 
-\1) 비교표 
+## 1) 비교표 
 
 |**기준**|**Java**|**C**|
 | :-: | :-: | :-: |
@@ -141,7 +130,7 @@
 |**디버깅**|용이함|용이하지 않음|
 |**적합 프로그램**|대형 프로젝트|빠른 소형 프로그램|
 
-\2) 비교 설명
+## 2) 비교 설명
 
 가. 지향점 및 중점 
 
@@ -195,36 +184,4 @@
 
 - 위에서 기술한 C언어의 특성 상 빠른 속도가 요구되고 비교적 소형의 프로그램에 적합하다.
 - 위에서 기술한 Java의 특성 상 대형 프로젝트를 다수의 인원이 개발하기에 적합하다. 
-
-
-
-
-
-
-
-**7. 원본 소스코드 – Rectangle**
-
-|<p>public class Rectangle {</p><p></p><p>`	`double width;</p><p>`	`double height;</p><p>	</p><p>`	`Rectangle(){</p><p>`		`this(1.0, 1.0);</p><p>`	`}</p><p>	</p><p>`	`Rectangle(double w, double h){</p><p>`		`this.width = w;</p><p>`		`this.height = h;</p><p>`	`}</p><p>	</p><p>`	`void print() {</p><p>`		`System.out.println("width = " + width + ",  height = " + height);		</p><p>`	`}</p><p>	</p><p>`	`boolean equal(Rectangle r) {</p><p>`		   `if ((this.width == r.width) && (this.height == r.height))</p><p>`			  `return true;</p><p>`		   `else</p><p>`			  `return false;</p><p>`		`}</p><p>	</p><p>`	`double compare(Rectangle r) {</p><p>`		   `return this.width \* this.height - r.width \* r.height;</p><p>`		`}</p><p>	</p><p>	</p><p>`	`void resize(double ratio) {</p><p>`		   `this.width \*= ratio;</p><p>`		   `this.height \*= ratio;</p><p>`		`}	</p><p>}</p>|
-| :- |
-
-
-|<p>public class TestRectangle {</p><p>`	`public static void main(String[] args) {</p><p>		</p><p>`		`Rectangle r1 = new Rectangle();</p><p>`		`Rectangle r2 = new Rectangle(1.0, 2.0);</p><p>`		`Rectangle r3 = new Rectangle(2.0, 1.0);</p><p>		</p><p>		</p><p>`		`if (r2.equal(r3))</p><p>`			`System.out.println("two rectangles are equal. \n");</p><p>`		`else</p><p>`			`System.out.println("two rectangles are different. \n");</p><p>		</p><p>		</p><p>`		`if (r2.compare(r3) > 0)</p><p>`			`System.out.println("the first is larger than the second. \n");</p><p>`		`else if (r2.compare(r3) < 0)</p><p>`			`System.out.println("the first is smaller than the second. \n");</p><p>`		`else</p><p>`			`System.out.println("two are the same in area. \n");</p><p>		</p><p>		</p><p>`		`r1.print();</p><p>`		`r1.resize(2.0);</p><p>`		`r1.print();</p><p>		</p><p>`	`}</p><p>}</p>|
-| :- |
-**7. 원본 소스코드 – TestRectangle**
-
-
-
-
-**8. 자체평가표** 
-
-평 가 표
-
-|평가 항목|<p>학생 자체 평가 </p><p>(리포트 해당 부분 표시 및 </p><p>간단한 의견)</p>|평가 (빈칸)|<p>점수</p><p>(빈칸)</p>|
-| :-: | :-: | :-: | :-: |
-|<p>Java Style </p><p>- 동작? Java 스타일로 작성했을 때 동작? </p><p></p><p>- 요구 사항 만족? </p><p>즉, 진정한 Java 스 타일?</p><p></p>|<p>실행결과 확인 결과 이상 없음 -6p</p><p></p><p>2개의 클래스 생성, 클래스 내 변수 및 메소드 정의, 메소드 오버로딩, 메소드 호출 시 객체를 통한 메소드 호출 등 Java의 특징을 적용하고자 하였음 – 4~6p</p>|||
-|<p>두 방법 비교 </p><p>- 평가 항목은? </p><p>- 한눈에 보이게?</p>|<p></p><p>평가항목은 수업 내용, 프로그램 작성 중 느낀 점, 기존의 배경지식을 활용하여 구성하였음 – 7~9p</p><p></p><p>표를 활용하여 한눈에 보이도록 하였으며 그 아래에 항목별 설명을 첨부하였음 -7p </p><p></p>|||
-|기타|<p></p><p>본인이 작성한 코드임을 프로젝트 생성 시 path와 프로그램 실행 결과로 증명하였음 </p><p></p><p></p>|||
-|총평/계|<p></p><p>프로젝트 생성에서 실행까지의 단계를 세분화하여 기술하였고, 이를 리포트 앞부분에 목차로 표현하였음. 최대한의 지식을 활용하여 두 언어를 비교하고자 하였음. </p><p></p>|||
-
-` `PAGE 3
 
