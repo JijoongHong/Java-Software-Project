@@ -16,7 +16,7 @@
 
   ## **2) 비교설명**
 
-
+#
 
 # 1.	Java
 
@@ -42,7 +42,7 @@
 주어진 작업을 수행한다. 
 
 
-  <img width="406" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 004" src="https://user-images.githubusercontent.com/63644587/116820559-c0130d80-abb0-11eb-86f6-ac0a86419db4.png">
+    <img width="406" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 004" src="https://user-images.githubusercontent.com/63644587/116820559-c0130d80-abb0-11eb-86f6-ac0a86419db4.png">
 
 
 ## 2) eclipse를 통한 프로젝트 및 Rectangle, TestRactangle 클래스 생성
@@ -67,15 +67,15 @@
 
 - 이를 UML Class Diagram으로 표현하면 다음과 같다. 
 
-|<p>**<Class name>**</p><p>Rectangle</p>|
-| :- |
-|<p>**<Data field>**</p><p>width: double</p><p>height: double</p>|
-|<p>**<Constructors>**</p><p>Rectangle( )</p><p>Rectangle(newWidth: double, newHeight: double)</p><p></p><p>**<Methods>**</p><p>print( )</p><p>equal(r: Rectangle): boolean</p><p>compare(r: Rectangle): double</p><p>resize(ratio: double)</p>|
+  |<p>**<Class name>**</p><p>Rectangle</p>|
+  | :- |
+  |<p>**<Data field>**</p><p>width: double</p><p>height: double</p>|
+  |<p>**<Constructors>**</p><p>Rectangle( )</p><p>Rectangle(newWidth: double, newHeight: double)</p><p></p><p>**<Methods>**</p><p>print( )</p><p>equal(r:     Rectangle): boolean</p><p>compare(r: Rectangle): double</p><p>resize(ratio: double)</p>|
 
 - 이를 코드로 구현하면 다음과 같다.
 
 
-  <img width="520" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 007" src="https://user-images.githubusercontent.com/63644587/116820578-d3be7400-abb0-11eb-9031-5eac0d9884ff.png">
+       <img width="520" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 007" src="https://user-images.githubusercontent.com/63644587/116820578-d3be7400-abb0-11eb-9031-5eac0d9884ff.png">
 
 
 - TestRactangle 클래스 생성 
