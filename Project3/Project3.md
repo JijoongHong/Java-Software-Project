@@ -125,7 +125,8 @@
 
 - public void setCategory(String category), public void setPhotoName(String photoName) : image 파일만으로 인스턴스를 생성한 이후 사진이름과 카테고리를 설정할 수 있도록 한다.
 
-  ![Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 007](https://user-images.githubusercontent.com/63644587/116820860-2e0c0480-abb2-11eb-9754-5ab2b3f96157.png)
+  ![Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 007](https://user-images.githubusercontent.com/63644587/116821219-f1d9a380-abb3-11eb-87cf-6de9e6495576.png)
+
 
 
 - public String get\_\_\_\_( ): 모든 클래스 내 변수에 대해 호출 시 해당 변수를 반환한다.
