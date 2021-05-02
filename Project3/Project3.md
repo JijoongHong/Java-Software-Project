@@ -131,7 +131,7 @@
 
 - public String get\_\_\_\_( ): 모든 클래스 내 변수에 대해 호출 시 해당 변수를 반환한다.
 
- ![Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 008](https://user-images.githubusercontent.com/63644587/116821065-4c263480-abb3-11eb-9832-9845b3e04fbf.png)
+  ![Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 008](https://user-images.githubusercontent.com/63644587/116821065-4c263480-abb3-11eb-9832-9845b3e04fbf.png)
  
 
 ## 3) Album Class 필수 메소드
@@ -163,9 +163,9 @@
 - 더불어 위 세 변수가 모두 true여야만 사진 인스턴스를 생성하도록 하여 오류가 있는 줄을 건너뛰도록 조치하였다. 
 - 이 때 fileNameValidator와 idConflictValidator 메소드를 활용하여 유효성 검사를 수행하였다. 날짜의 경우 따로 메소드를 구현하지 않았는데, dateFormatValidater를 운용한다면 boolean 형식으로 값을 반환할 때 getPhotoInfo내에서 LocalDateTime형으로 파싱하는 작업을 중복수행하여야하고, LocalDateTime형을 반환한다면 참거짓 유무를 알기 어려웠다. 그러므로 검증 과정을 getPhotoInfo 내에서 수행하였다.
   
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.012.png![image](https://user-images.githubusercontent.com/63644587/116821274-2f3e3100-abb4-11eb-9cfa-fff5cf490073.png)
+  ![Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 012](https://user-images.githubusercontent.com/63644587/116821383-ab387900-abb4-11eb-94e6-629f697b008e.png)
 
-  Aspose.Words.21670a06-6fed-4675-af64-fa1ba09203a9.013.png![image](https://user-images.githubusercontent.com/63644587/116821276-32392180-abb4-11eb-89b5-246d4c0f2996.png)
+  ![Aspose Words 21670a06-6fed-4675-af64-fa1ba09203a9 013](https://user-images.githubusercontent.com/63644587/116821386-b25f8700-abb4-11eb-97c0-3b75274f0eed.png)
 
 
 
