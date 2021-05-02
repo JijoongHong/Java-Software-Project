@@ -4,4 +4,4 @@
 
 ## [Project2. Java 및 C 스타일 프로그래밍 비교](./Project2/Project2.md)
 
-## *[Project3. 사진앨범 프로그램](./Project3/Project3.md)*
+## \*[Project3. 사진앨범 프로그램](./Project3/Project3.md)\*
