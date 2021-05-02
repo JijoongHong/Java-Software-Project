@@ -37,9 +37,7 @@
 
 - 구조체 선언 : 구조체 변수를 선언하여 사각형을 여러개 생성한다.
 
-- 각 함수를 호출하여 미리 정의된 기능을 실행하고, 일부는 return 값을 바탕으로 main에서 
-
-주어진 작업을 수행한다. 
+- 각 함수를 호출하여 미리 정의된 기능을 실행하고, 일부는 return 값을 바탕으로 main에서 주어진 작업을 수행한다. 
 
 
     <img width="406" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 004" src="https://user-images.githubusercontent.com/63644587/116820559-c0130d80-abb0-11eb-86f6-ac0a86419db4.png">
@@ -75,7 +73,7 @@
 - 이를 코드로 구현하면 다음과 같다.
 
 
-       <img width="520" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 007" src="https://user-images.githubusercontent.com/63644587/116820578-d3be7400-abb0-11eb-9031-5eac0d9884ff.png">
+     <img width="520" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 007" src="https://user-images.githubusercontent.com/63644587/116820578-d3be7400-abb0-11eb-9031-5eac0d9884ff.png">
 
 
 - TestRactangle 클래스 생성 
