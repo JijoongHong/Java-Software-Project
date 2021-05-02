@@ -35,9 +35,9 @@
 
 - main함수
 
-\- 구조체 선언 : 구조체 변수를 선언하여 사각형을 여러개 생성한다.
+- 구조체 선언 : 구조체 변수를 선언하여 사각형을 여러개 생성한다.
 
-\- 각 함수를 호출하여 미리 정의된 기능을 실행하고, 일부는 return 값을 바탕으로 main에서 
+- 각 함수를 호출하여 미리 정의된 기능을 실행하고, 일부는 return 값을 바탕으로 main에서 
 
 주어진 작업을 수행한다. 
 
@@ -59,20 +59,20 @@
   ![Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 006](https://user-images.githubusercontent.com/63644587/116820570-cd2ffc80-abb0-11eb-97dc-a365aea869cb.png)
 
 
-\- Rectangle 클래스는 사각형의 밑변과 높이를 규정하고, 이와 관련한 여러 메소드로 구성된다. 
+- Rectangle 클래스는 사각형의 밑변과 높이를 규정하고, 이와 관련한 여러 메소드로 구성된다. 
 
-\- 즉, 사각형의 속성과 사각형이라는 객체가 취할 수 있는 동작을 정의하는 과정이다.
+- 즉, 사각형의 속성과 사각형이라는 객체가 취할 수 있는 동작을 정의하는 과정이다.
 
-\- 이는 C언어에서 main함수 이전에 정의한 구조체와 함수들을 모아둔 것과 같다.
+- 이는 C언어에서 main함수 이전에 정의한 구조체와 함수들을 모아둔 것과 같다.
 
-\- 이를 UML Class Diagram으로 표현하면 다음과 같다. 
+- 이를 UML Class Diagram으로 표현하면 다음과 같다. 
 
 |<p>**<Class name>**</p><p>Rectangle</p>|
 | :- |
 |<p>**<Data field>**</p><p>width: double</p><p>height: double</p>|
 |<p>**<Constructors>**</p><p>Rectangle( )</p><p>Rectangle(newWidth: double, newHeight: double)</p><p></p><p>**<Methods>**</p><p>print( )</p><p>equal(r: Rectangle): boolean</p><p>compare(r: Rectangle): double</p><p>resize(ratio: double)</p>|
 
-\- 이를 코드로 구현하면 다음과 같다.
+- 이를 코드로 구현하면 다음과 같다.
 
 
   <img width="520" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 007" src="https://user-images.githubusercontent.com/63644587/116820578-d3be7400-abb0-11eb-9031-5eac0d9884ff.png">
@@ -84,15 +84,15 @@
   ![Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 008](https://user-images.githubusercontent.com/63644587/116820582-d91bbe80-abb0-11eb-87ed-66e359774fbf.png)
 
 
-\- C프로그램의 main역할을 하는 TestRectangle 클래스를 생성하여 main함수로 앞서 생성한 Rectangle 클래스의 동작을 확인할 수 있도록 한다. 
+- C프로그램의 main역할을 하는 TestRectangle 클래스를 생성하여 main함수로 앞서 생성한 Rectangle 클래스의 동작을 확인할 수 있도록 한다. 
 
-\- 객체의 생성 : 객체 변수를 선언하여 참조 변수를 생성한다. 이후 new 연산자를 활용해 생성자를 호출한다.
+- 객체의 생성 : 객체 변수를 선언하여 참조 변수를 생성한다. 이후 new 연산자를 활용해 생성자를 호출한다.
 
-\- 메소드의 호출 : Java에서 메소드는 객체에 종속된다. 그러므로 정의된 메소드의 실행을 위하여 생성된 객체를 인자로 넘기지 않는다. 
+- 메소드의 호출 : Java에서 메소드는 객체에 종속된다. 그러므로 정의된 메소드의 실행을 위하여 생성된 객체를 인자로 넘기지 않는다. 
 
-\- 더불어 static class가 아니므로, 클래스이름이 아닌 객체를 통해 메소드를 호출한다. 
+- 더불어 static class가 아니므로, 클래스이름이 아닌 객체를 통해 메소드를 호출한다. 
 
-\- 이를 코드로 표현하면 다음과 같다.
+- 이를 코드로 표현하면 다음과 같다.
 
 
   <img width="544" alt="Aspose Words e05cbcb1-e115-4d87-9cbb-2bb2fce79d6e 009" src="https://user-images.githubusercontent.com/63644587/116820602-e9339e00-abb0-11eb-9ca1-655a5ec19d1f.png">
