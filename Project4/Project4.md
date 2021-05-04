@@ -1,0 +1,2 @@
+- Java polymorphism, parameterized type 및 generic programming 이해 및 연습
+- Inheritance를 이용한 incremental programming 이해 및 연습
