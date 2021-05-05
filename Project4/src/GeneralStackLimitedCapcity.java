@@ -1,19 +1,19 @@
-public class GeneralStackLimitedCapcity {
-	private int top = -1;
-	private final int INIT_CAPACITY = 2;
-	private Object[] list;
+class GenericStackLimitedCapcity {
+	protected int top = -1;
+	protected final int INIT_CAPACITY = 2;
+	protected Object[] list;
 	
-	GeneralStackLimitedCapcity(){
+	GenericStackLimitedCapcity(){
 		list = new Object[INIT_CAPACITY];
 	}
 	
-	GeneralStackLimitedCapcity(int capacity){
+	GenericStackLimitedCapcity(int capacity){
 		list = new Object[capacity];
 
 	}
 	
 	public boolean isEmpty() {
-		return (top>=0);
+		return (top<0);
 	}
 	
 	public Object pop() {
@@ -28,10 +28,13 @@ public class GeneralStackLimitedCapcity {
 	}
 	
 	/** Override the toString in the Object class*/
+	
 	public String toString() {
-		String ss = "";
+		String ss = "GenericStackLimitedCapcity: {";
 		for(int i =0; i < top; i++)
-			ss += list[i] + " ";
+			ss += list[i] + ", ";
+		ss += list[top];
+		ss += "}";
 		return ss;
 	}
 	
