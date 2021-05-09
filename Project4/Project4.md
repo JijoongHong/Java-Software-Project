@@ -2,7 +2,7 @@
 
 
 
-# **목 차**
+## **목 차**
 
 ## **1. Generic Stack with limited capacity**
 
@@ -78,23 +78,22 @@
     - 스택이 비었는지 확인하는 메소드이다.
     - 스택이 비었다면 top 변수의 값은 -1이 된다. 그러므로 top이 음수인지 여부를 반환하도록 한다.
 
-- public Object pop()
+  - public Object pop()
 
-  ![image](https://user-images.githubusercontent.com/63644587/117577197-beeb5e80-b123-11eb-9108-342d2f81de1c.png)
+    ![image](https://user-images.githubusercontent.com/63644587/117577197-beeb5e80-b123-11eb-9108-342d2f81de1c.png)
 
-
-- 배열 내에 데이터가 존재한다면 list[top]을 반환하고, 가장 최근 데이터를 가리키는 top변수를 줄인다.
-- 만약 존재하지 않는 경우 null값을 반환한다.
+    - 배열 내에 데이터가 존재한다면 list[top]을 반환하고, 가장 최근 데이터를 가리키는 top변수를 줄인다.
+    - 만약 존재하지 않는 경우 null값을 반환한다.
 
   - public void push(Object o)
 
-  ![image](https://user-images.githubusercontent.com/63644587/117577222-e3dfd180-b123-11eb-9373-b26bdc1220e4.png)
+    ![image](https://user-images.githubusercontent.com/63644587/117577222-e3dfd180-b123-11eb-9373-b26bdc1220e4.png)
 
     - 데이터를 추가하는 메소드로서, top변수를 increment한 후 해당 인덱스에 인자로 받은 Object o를 대입한다.
 
   - public String toString()  
 
-  ![image](https://user-images.githubusercontent.com/63644587/117577225-e93d1c00-b123-11eb-9184-00333d22b603.png)
+    ![image](https://user-images.githubusercontent.com/63644587/117577225-e93d1c00-b123-11eb-9184-00333d22b603.png)
 
 
     - Object class의 toString()메소드를 override하여 재정의한 것으로, 스택 내의 데이터를 하나의 문자열로 만들어 반환한다.
@@ -336,6 +335,8 @@ ParaStack은 동적스택에 type을 인자로 받아 type-safe를 구현한 스
 
 - 어떠한 객체든 스택의 데이터로 사용할 수 있는지 확인
   - 이를 위해 다음과 같은 코드를 실행하여 지정 type의 데이터만을 push한다.
+
+
     ![image](https://user-images.githubusercontent.com/63644587/117577542-2eae1900-b125-11eb-8059-56cb34ceabae.png) ![image](https://user-images.githubusercontent.com/63644587/117577546-31a90980-b125-11eb-9163-bc5ac65fe6ad.png)
 
   - 실행 결과 
