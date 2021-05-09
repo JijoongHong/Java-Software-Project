@@ -2,6 +2,8 @@
 
 
 
+
+
 ## **목 차**
 
 ## **1. Generic Stack with limited capacity**
@@ -24,6 +26,8 @@
 
 
 
+
+
 # **1. Generic Stack with limited capacity**
 
 ## **1) 클래스 분석**
@@ -31,10 +35,10 @@
 - UML Class
 - 정적스택인 GenericStackLimitedCapacity의 UML 클래스는 다음과 같다.
 
-|<p>**<Class name>**</p><p>GenericStackLimitedCapacity</p>|
-| :- |
-|<p>**<Data field>**</p><p>- top: int</p><p>- INIT\_CAPACITY: int{readOnly}</p><p>- list: Object[]</p>|
-|<p>**<Constructors>**</p><p>+ GenericStackLimitedCapacity ( )</p><p>+ GenericStackLimitedCapacity (capacity: int)</p><p></p><p>**<Methods>**</p><p>+ isEmpty( ) : boolean</p><p>+ pop( ) : Object</p><p>+ push(o : Object) </p><p>+ toString( ) : String </p>|
+  |<p>**<Class name>**</p><p>GenericStackLimitedCapacity</p>|
+  | :- |
+  |<p>**<Data field>**</p><p>- top: int</p><p>- INIT\_CAPACITY: int{readOnly}</p><p>- list: Object[]</p>|
+  |<p>**<Constructors>**</p><p>+ GenericStackLimitedCapacity ( )</p><p>+ GenericStackLimitedCapacity (capacity: int)</p><p></p><p>**<Methods>**</p><p>+ isEmpty( ) : boolean</p><p>+ pop( ) : Object</p><p>+ push(o : Object) </p><p>+ toString( ) : String </p>|
 
 
 
