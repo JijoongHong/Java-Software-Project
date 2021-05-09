@@ -13,15 +13,6 @@ public class ParaStack<E>{
 		list = (E[]) new Object[capacity];
 	}
 	
-	public void push(E o) {
-		
-		if (top+1 >= list.length) {
-			E[] temp = (E[]) new Object[list.length * 2];
-			System.arraycopy(list, 0, temp, 0, list.length);
-			list = temp;
-		}
-			list[++top] = o;
-	}
 	
 	public boolean isEmpty() {
 		return (top<0);
@@ -32,6 +23,16 @@ public class ParaStack<E>{
 			return (E) list[top--];
 		else
 			return null;
+	}
+	
+	public void push(E o) {
+		
+		if (top+1 >= list.length) {
+			E[] temp = (E[]) new Object[list.length * 2];
+			System.arraycopy(list, 0, temp, 0, list.length);
+			list = temp;
+		}
+			list[++top] = o;
 	}
 	
 	public String toString() {

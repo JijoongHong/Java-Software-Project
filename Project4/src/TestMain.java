@@ -22,14 +22,16 @@ public class TestMain {
 		
 		
 		//(1-2) GenericStackLimitedCapcity 실험 - 정상 
-		System.out.println(s1.isEmpty());
 		s1 = new GenericStackLimitedCapcity(4);
+		System.out.println(s1.isEmpty());
 		s1.push(1); // 정수 삽입 
 		s1.pop(); //삭제 
 		s1.push("Java"); // 문자열 삽입 
 		s1.push(2); // 정수 삽입 
 		s0.push(3.141592); //실수 삽입
-		s1.push(s0); // 인스턴스 삽입 
+		s1.push(s0); // 인스턴스 참조변수 삽입 
+		int[] a = {1,2,3}; // 배열 참조변수 삽입
+		s1.push(a);
 		System.out.println(s1.isEmpty());
 		printStack(s1); // 정상출력
 		
@@ -41,7 +43,7 @@ public class TestMain {
 		s2.push("홍지중"); //문자열 삽입 
 		s2.push(3); // 정수 삽입 
 		s3.push(2.718281); //실수 삽입
-		s2.push(s3); // 클래스 삽입 
+		s2.push(s3); // 인스턴스 참조변수 삽입 
 		System.out.println(s2.isEmpty());
 		printStack(s2); // 정상출력
 		
@@ -67,14 +69,19 @@ public class TestMain {
 		System.out.println(s4.isEmpty());
 		printStack(s4); // 정상출력
 		
-
-
-
-
+		
+		// (3-3) ParaStack 실험 - 정상 
+		System.out.println(s5.isEmpty());
+		s5.push(3.141592); // 실수만 삽입 
+		s5.push(2.718281);
+		s5.push(1.0);
+		s5.push(-2.0176963);
+		System.out.println(s5.isEmpty());
+		printStack(s5); // 정상출력
+		
 	}
 	
 	public static void printStack(Object x) {
-		
 		System.out.println(x.toString()+'\n');
 	}
 

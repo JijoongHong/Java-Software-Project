@@ -11,7 +11,7 @@ public class GenericStack extends GenericStackLimitedCapcity{
 	
 	public void push(Object o) {
 		
-		if (top+1 >= list.length) {
+		if (top >= list.length-1) {
 			Object[] temp = new Object[list.length * 2];
 			System.arraycopy(list, 0, temp, 0, list.length);
 			list = temp;
@@ -29,3 +29,5 @@ public class GenericStack extends GenericStackLimitedCapcity{
 	}
 	
 }
+
+
