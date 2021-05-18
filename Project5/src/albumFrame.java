@@ -1,4 +1,8 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
@@ -13,43 +17,106 @@ public class albumFrame extends JFrame {
 	JButton jbtDel;
 	JButton jbtLoad;
 	JButton jbtSave;
+	JPanel boundaries;
 	
-	public albumFrame() {
+	albumFrame() {
 		setSize(500, 500);
+		setLayout(new BorderLayout());
+		
 		jbtDate = new JButton("Date");
 		jbtCategory = new JButton("Category");
 		jbtEdit = new JButton("EDIT");
 		jbtAdd = new JButton("ADD");
-		jbtDel = new JButton("DEL...");
+		jbtDel = new JButton("DELETE");
 		jbtLoad = new JButton("LOAD");
 		jbtSave = new JButton("SAVE");
-		
-		setLayout(new BorderLayout());
-		
-		JPanel p = new JPanel(new GridLayout(1, 5));
-		p.add(jbtEdit);
-		p.add(jbtAdd);
-		p.add(jbtDel);
-		p.add(jbtLoad);
-		p.add(jbtSave);
 		
 		JPanel mode = new JPanel(new BorderLayout());
 		mode.add(jbtDate,BorderLayout.WEST);
 		mode.add(jbtCategory, BorderLayout.EAST);
 		
+		boundaries = new JPanel();
 
-		JPanel photos = new JPanel(new GridLayout(3, 3, 5, 5));
 		
-		photos.setBorder(new TitledBorder(new LineBorder(Color.blue),"2020-01-21"));
+		JPanel btns = new JPanel(new GridLayout(1, 5));
+		btns.add(jbtEdit);
+		btns.add(jbtAdd);
+		btns.add(jbtDel);
+		btns.add(jbtLoad);
+		btns.add(jbtSave);
 		
 		
 		add(mode, BorderLayout.NORTH);
-		add(photos, BorderLayout.CENTER);
-		add(p, BorderLayout.SOUTH);
+		add(boundaries, BorderLayout.CENTER);
+		add(btns, BorderLayout.SOUTH);
 		
-		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jbtAdd.addActionListener(new Listener());
+		jbtLoad.addActionListener(new Listener());
+
 		}
+	
+	
+
+	
+	class Listener implements ActionListener {
+	    public void actionPerformed(ActionEvent e) {
+	    	if (e.getSource() == jbtAdd) {
+		    	PhotoInfo frame2 = new PhotoInfo();
+				frame2.setVisible(true);
+	    	}
+	    	
+	    	if (e.getSource() == jbtLoad) {
+	    	    Album albumData = new Album("Photo-normal.data");
+	    	    int count = 0;
+	    	    ArrayList<Integer> countEachDate = new ArrayList<Integer>();
+	    	    ArrayList<String> dates = new ArrayList<String>();
+	    	    ArrayList<JPanel> photos = new ArrayList<JPanel>();
+	    	    ArrayList<JLabel> photo = new ArrayList<JLabel>();
+	    	    
+	    	    for (int i = 0; i < albumData.Album.size(); i++) {
+	    	    	Photo p = albumData.Album.get(i);
+	    	    	String[] tokens = p.getAddTime().split("_");
+	    	    	photo.add(new JLabel(new ImageIcon(p.getImageFileName())));
+	    	    	
+	    	    	if (dates.contains(tokens[0]))
+	    	    		countEachDate.set(dates.indexOf(tokens[0]), dates.indexOf(tokens[0])+1);
+	    	    	else {
+	    	    		dates.add(tokens[0]);
+	    	    		countEachDate.add(1);
+	    	    		count++;
+	    	    	}
+	    	    }
+	    	  int temp = 0;
+	    	  for (int i = 0; i < count; i++) {
+	    		  int height = countEachDate.get(i) / 3; 
+	    		  if (countEachDate.get(i) % 3 != 0)
+	    			  height++;
+	    				  
+	    		  photos.add(new JPanel(new GridLayout(height, 3, 5, 5)));
+	    		  photos.get(i).setBorder(new TitledBorder(new LineBorder(Color.blue),dates.get(i)));
+	    		  
+	    		  for (int j = temp; j < countEachDate.get(i)+temp;i++) {
+	    			  photos.get(i).add(photo.get(j));
+	    		  }
+	    		  temp += countEachDate.get(i)+1;
+	    		  boundaries.add(photos.get(i));
+	    	  }
+	    	    
+	    	    boundaries.repaint();
+	    	    
+	    	}
+	    }
+	}
+
+		
+		
+
+		
+	
+	
+	
 	}
 	
+
+
 
