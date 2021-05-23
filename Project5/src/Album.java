@@ -7,13 +7,11 @@ import java.util.Scanner;
 
 public class Album {
 	
-	protected ArrayList<Photo> Album;
+	private ArrayList<Photo> Album;
 	private int numOfPhotos;
 	
-	
-	
 	Album(String photoInfoFileName){
-		this.Album = new ArrayList<Photo>(100);
+		this.Album = new ArrayList<Photo>();
 		this.numOfPhotos = 0;
 		this.getData(photoInfoFileName);
 	}
@@ -78,13 +76,17 @@ public class Album {
 	}
 	
 	public Photo getPhoto(int i) {
-		//if (i == 0)
-			//System.out.println("The album has "+this.numOfPhotos+" photos");
-		
 		return Album.get(i);
 	}
 	
-	//-----------추가 구현 사항-----------//
+	public void setCategory(int i, String category) { //*
+		Album.get(i).setCategory(category);
+	}
+	
+	public void setPhotoName(int i, String photoName) { //*
+		Album.get(i).setPhotoName(photoName);
+	}
+	
 	
 	private boolean fileNameValidator(String imageFileName) {
 		if(imageFileName.equals("")) {

@@ -7,45 +7,43 @@ import javax.swing.*;
 
 public class PhotoInfo extends JFrame {
 	
-	JLabel jlbName;
-	JLabel jlbAddedTime;
-	JLabel jlbShowAddedTime;
-	JLabel jlbCategory;
-	JLabel jlbCreatedTime;
-	JLabel jlbImageFile;
-	JLabel jlbSelect;
+	private JLabel jlbName;
+	private JLabel jlbAddedTime;
+	private JLabel jlbShowAddedTime;
+	private JLabel jlbCategory;
+	private JLabel jlbCreatedTime;
+	private JLabel jlbImageFile;
+	private JLabel jlbSelect;
 	
-	JButton jbtFile;
-	JButton jbtCancel;
-	JButton jbtOk;
+	private JButton jbtFile;
+	private JButton jbtCancel;
+	private JButton jbtOk;
 	
-	JTextField jtxtName;
-	JTextField jtxtAddedTime;
-	JTextField jtxtCategory;
-	JTextField jtxtCreatedTime;
-	JTextField jtxtImageFile;
+	private JTextField jtxtName;
+	private JTextField jtxtCategory;
+	private JTextField jtxtCreatedTime;
+	private JTextField jtxtImageFile;
 	
-	public PhotoInfo() {
+	PhotoInfo() {
 		setSize(800, 120);
 		setLayout(new BorderLayout());
 		
-		JLabel jlbName = new JLabel("Name");
-		JLabel jlbAddedTime = new JLabel("Added Time");
-		JLabel jlbShowAddedTime = new JLabel("");
-		JLabel jlbCategory = new JLabel("Category");
-		JLabel jlbCreatedTime = new JLabel("Created Time");
-		JLabel jlbImageFile = new JLabel("Image File");
-		JLabel jlbSelect = new JLabel("Select");
+		jlbName = new JLabel("Name");
+		jlbAddedTime = new JLabel("Added Time");
+		jlbShowAddedTime = new JLabel("");
+		jlbCategory = new JLabel("Category");
+		jlbCreatedTime = new JLabel("Created Time");
+		jlbImageFile = new JLabel("Image File");
+		jlbSelect = new JLabel("Select");
 		
-		JButton jbtFile = new JButton("File");
-		JButton jbtCancel = new JButton("Cancel");;
-		JButton jbtOk = new JButton("OK");;
+		jbtFile = new JButton("File");
+		jbtCancel = new JButton("Cancel");;
+		jbtOk = new JButton("OK");;
 		
-		JTextField jtxtName = new JTextField();
-		JTextField jtxtAddedTime = new JTextField();
-		JTextField jtxtCategory = new JTextField();
-		JTextField jtxtCreatedTime = new JTextField();
-		JTextField jtxtImageFile = new JTextField();
+		jtxtName = new JTextField();
+		jtxtCategory = new JTextField();
+		jtxtCreatedTime = new JTextField();
+		jtxtImageFile = new JTextField();
 		
 		JPanel lbls = new JPanel(new GridLayout(1, 6));
 		lbls.add(jlbName);
@@ -70,8 +68,27 @@ public class PhotoInfo extends JFrame {
 		add(lbls, BorderLayout.NORTH);
 		add(txts, BorderLayout.CENTER);
 		add(btns, BorderLayout.SOUTH);
-	
+		
+		jbtFile.addActionListener(new Listener());
+		jbtCancel.addActionListener(new Listener());
+		jbtOk.addActionListener(new Listener());
 		
 	}	
+	
+	class Listener implements ActionListener {
+	    public void actionPerformed(ActionEvent e) {
+	    	if (e.getSource() == jbtFile) {
+	    	}
+	    	
+	    	if (e.getSource() == jbtCancel) {
+
+	    	}    
+	    
+	    	if (e.getSource() == jbtOk) {
+
+	    	}
+
+	    }
+	}
 	
 }

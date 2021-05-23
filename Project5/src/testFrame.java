@@ -5,13 +5,13 @@ public class testFrame {
 	
 	public static void main(String[] args) {
 		
-		albumFrame frame = new albumFrame();
+		
+		PhotoInfo frame2 = new PhotoInfo();
+		Album albumData = new Album("Photo-normal.data");
+		AlbumFrame frame = new AlbumFrame(albumData, frame2);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		/*
-		PhotoInfo frame2 = new PhotoInfo();
-		frame2.setVisible(true);
-		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		*/
+		
+		
 	}
 }
