@@ -5,7 +5,7 @@
 - [Project2. Java 및 C 스타일 프로그래밍 비교](./Project2/Project2.md)
 - [Project3. 사진앨범 프로그램](./Project3/Project3.md)
 - [Project4. Inheritence, Polymorphism, Parameterized type, Generic programming](./Project4/Project4.md)
-- [Project5. 사진앨범 프로그램 GUI 및 기능연동](./Project5/Project5.md)
+- [Project5. 사진앨범 프로그램 GUI 및 기능연동](./Project5/project5.md)
 
 ## Lecture Notes
 - [1. Java Introduction](https://www.notion.so/pyrasuite/1-Java-Introduction-02ab8e8c3bed427da7b031a1440c6451)
