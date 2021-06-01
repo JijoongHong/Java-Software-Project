@@ -33,8 +33,6 @@ public class AlbumFrame extends JFrame {
 		info = new PhotoInfo();
 		info2 = new PhotoInfo();
 		
-
-		
 		setSize(680, 600);
 		setLayout(new BorderLayout());
 		
@@ -168,6 +166,7 @@ public class AlbumFrame extends JFrame {
 	    	}
 	    	
 	    	if (e.getSource() == jbtLoad) {
+	    		albumData = new Album("Photo-normal.data");
 	    	    showImage(albumData);
 	    	}    
 	    
@@ -192,8 +191,6 @@ public class AlbumFrame extends JFrame {
 	    			
 	    		}else 
 	    			JOptionPane.showMessageDialog(null, "사진을 선택하세요.");
-	    		
-	    		
 	    	}
 	    	
 	    	if (e.getSource() == jbtDel) {
@@ -202,6 +199,7 @@ public class AlbumFrame extends JFrame {
 	 		       String path = selected.getComponent(0).toString().split(",")[11].split("=")[1];
 			       int index = albumData.getIndex(path);
 			       albumData.delPhoto(index);
+			       selected = null;
 			       showImage(albumData);
 	    			
 	    		}else 
@@ -242,6 +240,7 @@ public class AlbumFrame extends JFrame {
 		        albumData.setCategory(index, info2.jtxtCategory.getText());
 		        albumData.setImageFileName(index, info2.jtxtImageFile.getText());
 	    		info2.dispose();
+	    		selected = null;
 	    		showImage(albumData);
 	    		
 	    	}

@@ -161,8 +161,5 @@ public class Album {
 		//ArrayList와 Compartor 통해 추후 구현예정 
 	}
 	
-	public void sortByPhotoName() {
-		//ArrayList와 Compartor 통해 추후 구현예정 
-	}
 	
 }
