@@ -6,7 +6,6 @@ import java.time.format.DateTimeFormatter;
 
 import javax.swing.*;
 
-
 public class PhotoInfo extends JFrame {
 	
 	private JLabel jlbName;
@@ -20,13 +19,11 @@ public class PhotoInfo extends JFrame {
 	private JButton jbtFile;
 	protected JButton jbtCancel;
 	protected JButton jbtOk;
-	
 	protected JTextField jtxtName;
 	protected JTextField jtxtCategory;
 	protected JTextField jtxtCreatedTime;
 	protected JTextField jtxtImageFile;
-	private Album albumData;
-	protected AlbumFrame mainFrame;
+
 	
 	PhotoInfo() {
 
@@ -88,20 +85,6 @@ public class PhotoInfo extends JFrame {
 	    		String path = chooser.getSelectedFile().getPath();
 	    		jtxtImageFile.setText(path);
 	 
-	    	}
-	    	
-	    	if (e.getSource() == jbtCancel) {
-
-	    	}    
-	    
-	    	if (e.getSource() == jbtOk) {
-	    		/*
-	    		DateTimeFormatter formatter = 
-						DateTimeFormatter.ofPattern("yyyy-MM-dd_HH:mm:ss:SSS");
-	    		
-	    		String addedTime = LocalDateTime.now().format(formatter);
-	    		albumData.addPhoto("IMG"+addedTime+";"+jtxtName.getText()+";"+addedTime+";"+jtxtCategory.getText()+";"+jtxtImageFile.getText()+";");
-	    		*/
 	    	}
 
 	    }

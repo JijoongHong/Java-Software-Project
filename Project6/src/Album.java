@@ -3,9 +3,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
-public class Album {
+public class Album implements Cloneable {
 	
 	private ArrayList<Photo> Album;
 	private int numOfPhotos;
@@ -32,7 +34,6 @@ public class Album {
 			input.close();
 		}
 		catch(Exception e) {
-			//e.printStackTrace(); 
 			System.out.println("Unknown Album data File");
 		} 
 	}
@@ -69,22 +70,6 @@ public class Album {
 		}
 	}
 	
-	public int getIndex(String path) {
-		
-		int index = 0;
-		
-		for (int i=0; i<numOfPhotos; i++) {
-			
-			if (Album.get(i).getImageFileName().equals(path)) {
-				index = i;
-				break;
-			}
-				
-		}
-				
-		return index;
-		
-	}
 	
 	public int numPhotos() {
 		return this.numOfPhotos;
@@ -105,13 +90,11 @@ public class Album {
 	public void setImageFileName(int i, String ImageFileName) { //*
 		Album.get(i).setImageFileName(ImageFileName);
 	}
-	
-	
+
 	private boolean fileNameValidator(String imageFileName) {
 		if(imageFileName.equals("")) {
 			return false;
 		}else return true;
-		 
 	}
 	
 	private boolean idConflictValidator(String id) {
@@ -120,6 +103,7 @@ public class Album {
 		}
 		return false;
 	}
+	
 	
 	public void addPhotoByFileName(String line) {
 		String[] tokens = line.split(";");
@@ -141,7 +125,7 @@ public class Album {
 		Album.remove(i);
 	}
 	
-	public void exportToTxt(String path) throws IOException{
+	public void export(String path) throws IOException{
 		FileWriter fileWriter = new FileWriter(path);
 		PrintWriter printWriter = new PrintWriter(fileWriter);
 		for(int i = 0; i < numOfPhotos; i++) {
@@ -153,13 +137,42 @@ public class Album {
 	}
 	
 	
+	public int getIndex(String path) {
+		int index = 0;
+		for (int i=0; i<numOfPhotos; i++) {
+			if (Album.get(i).getImageFileName().equals(path)) {
+				index = i;
+				break;
+			}
+		}
+		return index;
+	}
+	
 	public void sortById() {
-		//ArrayList와 Compartor 통해 추후 구현예정 
-	}
-	
+		Comparator<Photo> idComparator = new Comparator<Photo>() {
+            @Override
+            public int compare(Photo o1, Photo o2) {
+                return o1.getAddTime().compareTo(o2.getAddTime());
+            }
+        };
+        Collections.sort(Album,idComparator);
+    }
+
 	public void sortByCategory() {
-		//ArrayList와 Compartor 통해 추후 구현예정 
+		Comparator<Photo> categoryComparator = new Comparator<Photo>() {
+            @Override
+            public int compare(Photo o1, Photo o2) {
+                return o1.getCategory().compareTo(o2.getCategory());
+            }
+        };
+        Collections.sort(Album,categoryComparator);
 	}
-	
+     
+	public Object clone() throws CloneNotSupportedException {
+		 Album a = (Album)super.clone();
+		 a.Album = (ArrayList) this.Album.clone();
+		 return a;
+	}
+
 	
 }

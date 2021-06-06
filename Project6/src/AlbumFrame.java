@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -22,16 +23,25 @@ public class AlbumFrame extends JFrame {
 	private JButton jbtLoad;
 	private JButton jbtSave;
 	private JPanel boundaries;
-	private Album albumData;
+
+
 	private PhotoInfo info;
 	private PhotoInfo info2;
-	JScrollPane scrollPane;
+	private JScrollPane scrollPane;
 	private JPanel selected;
+	private int mode = 0;
+	private Album origData;
+	private Album albumData;
 	
-	AlbumFrame() {
-		albumData = new Album("Photo-normal.data");
-		info = new PhotoInfo();
-		info2 = new PhotoInfo();
+	AlbumFrame(Album albumData) {
+		
+		this.albumData = albumData;
+		
+		try {
+			origData = (Album) albumData.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
 		
 		setSize(680, 600);
 		setLayout(new BorderLayout());
@@ -47,9 +57,7 @@ public class AlbumFrame extends JFrame {
 		JPanel mode = new JPanel(new BorderLayout());
 		mode.add(jbtDate,BorderLayout.WEST);
 		mode.add(jbtCategory, BorderLayout.EAST);
-		
-		//boundaries = new JPanel();
-		
+				
 		JPanel btns = new JPanel(new GridLayout(1, 5));
 		btns.add(jbtEdit);
 		btns.add(jbtAdd);
@@ -61,7 +69,6 @@ public class AlbumFrame extends JFrame {
 		add(mode, BorderLayout.NORTH);
 		scrollPane = new JScrollPane();
 		add(scrollPane, BorderLayout.SOUTH);
-		//add(boundaries, BorderLayout.CENTER);
 		add(btns, BorderLayout.SOUTH);
 		
 		jbtAdd.addActionListener(new Listener());
@@ -72,21 +79,23 @@ public class AlbumFrame extends JFrame {
 		jbtDel.addActionListener(new Listener());
 		jbtSave.addActionListener(new Listener());
 		
+		info = new PhotoInfo();
+		info2 = new PhotoInfo();
 		info.jbtCancel.addActionListener(new Listener());
 		info.jbtOk.addActionListener(new Listener());
 		info2.jbtCancel.addActionListener(new Listener());
 		info2.jbtOk.addActionListener(new Listener());
+		
+		showImage();
 		}
 	
 	
-	private void showImage(Album albumData) {
+	private void showImage() {
 		boundaries = new JPanel();
 		this.remove(scrollPane);
-		//add(boundaries, BorderLayout.CENTER);
     	
-    	
-	    ArrayList<Integer> countEachDate = new ArrayList<Integer>();
-	    ArrayList<String> dates = new ArrayList<String>();
+	    ArrayList<Integer> countEachBase = new ArrayList<Integer>();
+	    ArrayList<String> bases = new ArrayList<String>();
 	    ArrayList<JPanel> photos = new ArrayList<JPanel>();
 	    ArrayList<JPanel> photo = new ArrayList<JPanel>();
 
@@ -102,17 +111,32 @@ public class AlbumFrame extends JFrame {
 	    	photo.get(i).addMouseListener(new MouseListener());
 	    	String[] tokens = p.getAddTime().split("_");
 
-	    	
-	    	if (dates.contains(tokens[0]))
-	    		countEachDate.set(dates.indexOf(tokens[0]), 
-	    				countEachDate.get(dates.indexOf(tokens[0]))+1);
-	    	else {
-	    		dates.add(tokens[0]);
-	    		countEachDate.add(1);
-	    		count++;
+	    	switch (mode) {
+		    	case 0: 
+			    	if (bases.contains(tokens[0]))
+			    		countEachBase.set(bases.indexOf(tokens[0]), 
+			    				countEachBase.get(bases.indexOf(tokens[0]))+1);
+			    	else {
+			    		bases.add(tokens[0]);
+			    		countEachBase.add(1);
+			    		count++;
+			    	}
+			    	break;
+			    	
+		    	case 1: 
+			    	if (bases.contains(p.getCategory()))
+			    		countEachBase.set(bases.indexOf(p.getCategory()), 
+			    				countEachBase.get(bases.indexOf(p.getCategory()))+1);
+			    	else {
+			    		bases.add(p.getCategory());
+			    		countEachBase.add(1);
+			    		count++;
+			    	}
+			    	break;
 	    	}
+
 	    }
-	    
+
 		if (count == 1)
 			boundaries.setLayout(new GridLayout(2, 1, 5, 5));
 		else
@@ -120,18 +144,22 @@ public class AlbumFrame extends JFrame {
 	
     	int temp = 0;
     	for (int i = 0; i < count; i++) {
-    		int height = countEachDate.get(i) / 3; 
-    		if (countEachDate.get(i) % 3 != 0)
+    		int height = countEachBase.get(i) / 3; 
+    		if (countEachBase.get(i) % 3 != 0)
     			height++;
-    			int remainder = countEachDate.get(i) % 3;
+    			int remainder = countEachBase.get(i) % 3;
 
     		photos.add(new JPanel(new GridLayout(height,3, 20, 20)));
-    		photos.get(i).setBorder(new TitledBorder(new LineBorder(Color.blue),dates.get(i)));
+    		
+    		if (bases.get(i).equals(""))
+    			photos.get(i).setBorder(new TitledBorder(new LineBorder(Color.blue),"Unknown"));
+    		else
+    			photos.get(i).setBorder(new TitledBorder(new LineBorder(Color.blue),bases.get(i)));
 
-    		for (int j = temp; j < countEachDate.get(i)+temp;j++) {
+    		for (int j = temp; j < countEachBase.get(i)+temp;j++) {
     			photos.get(i).add(photo.get(j));
     		}
-    		if (countEachDate.get(i) % 3 != 0) {
+    		if (countEachBase.get(i) % 3 != 0) {
 	    		for (int j = 0; j < 3 - remainder; j++) {
 	    			photos.get(i).add(new JLabel(" "));
 	    		}
@@ -140,24 +168,15 @@ public class AlbumFrame extends JFrame {
     		if (count == 1)
     			photos.add(new JPanel());
 
-    		temp += countEachDate.get(i);
+    		temp += countEachBase.get(i);
     		boundaries.add(photos.get(i));
     	}
-    	
-    	//add(scrollPane, BorderLayout.CENTER);
-    	//boundaries.add(new JScrollBar(JScrollBar.VERTICAL));
-    	//scrollPane.setViewportView(boundaries);
-    	//this.revalidate();
-    	//scrollPane.repaint();
-    	//this.remove(scrollPane);
-    	//add(scrollPane, BorderLayout.CENTER);
+
     	scrollPane = new JScrollPane(boundaries);
     	add(scrollPane, BorderLayout.CENTER);
     	this.revalidate();
 	}
-		
-	
-	
+
 	
 	class Listener implements ActionListener {
 	    public void actionPerformed(ActionEvent e) {
@@ -166,19 +185,27 @@ public class AlbumFrame extends JFrame {
 	    	}
 	    	
 	    	if (e.getSource() == jbtLoad) {
-	    		albumData = new Album("Photo-normal.data");
-	    	    showImage(albumData);
+	    		
+	    		try {
+					albumData = (Album) origData.clone();
+				}catch (CloneNotSupportedException e1) {
+					e1.printStackTrace();
+				}
+	    	    showImage();
 	    	}    
 	    
 	    	if (e.getSource() == jbtDate) {
+	    		mode = 0;
 	    		albumData.sortById();
-	    		showImage(albumData);
+	    		showImage();
 	    	}
 	    	
 	    	if (e.getSource() == jbtCategory) {
+	    		mode = 1;
 	    		albumData.sortByCategory();
-	    		showImage(albumData);
+	    		showImage();
 	    	}
+	    	
 	    	if (e.getSource() == jbtEdit) {
 	    		
 	    		if (selected != null) {
@@ -200,21 +227,23 @@ public class AlbumFrame extends JFrame {
 			       int index = albumData.getIndex(path);
 			       albumData.delPhoto(index);
 			       selected = null;
-			       showImage(albumData);
+			       showImage();
 	    			
 	    		}else 
 	    			JOptionPane.showMessageDialog(null, "사진을 선택하세요.");
-	    		
 	    	}
 	    	
 	    	
 	    	if (e.getSource() == jbtSave) {
+	    		
+	    		albumData.sortById();
+	    		
 	    		try {
-					albumData.exportToTxt("output.txt");
+					albumData.export("Photo-normal.data");
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+	    		
 	    	}
 	    	
 	    	if (e.getSource() == info.jbtOk) {
@@ -222,10 +251,10 @@ public class AlbumFrame extends JFrame {
 						DateTimeFormatter.ofPattern("yyyy-MM-dd_HH:mm:ss:SSS");
 	    		
 	    		String addedTime = LocalDateTime.now().format(formatter);
-	    		albumData.addPhoto("IMG"+addedTime+";"+info.jtxtName.getText()+";"+addedTime+";"+info.jtxtCategory.getText()+";"+info.jtxtImageFile.getText()+";");
+	    		albumData.addPhoto("IMG"+addedTime+";"+info.jtxtName.getText()+";"+addedTime+";"+
+	    		info.jtxtCategory.getText()+";"+info.jtxtImageFile.getText()+";");
 	    		info.dispose();
-	    		showImage(albumData);
-	    		
+	    		showImage();
 	    	}
 	    	
 	    	if (e.getSource() == info.jbtCancel) {
@@ -241,8 +270,7 @@ public class AlbumFrame extends JFrame {
 		        albumData.setImageFileName(index, info2.jtxtImageFile.getText());
 	    		info2.dispose();
 	    		selected = null;
-	    		showImage(albumData);
-	    		
+	    		showImage();
 	    	}
 	    	
 	    	if (e.getSource() == info2.jbtCancel) {
@@ -252,9 +280,8 @@ public class AlbumFrame extends JFrame {
 	}
 	
 	class MouseListener extends MouseAdapter {
-		   public void mousePressed(MouseEvent e) {
+		   public void mouseClicked(MouseEvent e) {
 		       selected = (JPanel) e.getSource();
-		       
 		   }
 		}
 	

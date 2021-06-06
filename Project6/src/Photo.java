@@ -1,13 +1,16 @@
 import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.time.format.DateTimeFormatter;
 
-public class Photo {
+public class Photo{
 
 	private String id;
 	private String photoName;
 	private String addTime;
 	private String category;
 	private String imageFileName;
+	
+	
 	
 	
 	Photo(String imageFileName){
@@ -44,8 +47,7 @@ public class Photo {
 		System.out.print(this.id+";"+this.photoName+";"+this.addTime+";"+
 						this.category+";"+this.imageFileName+";\n");
 	}
-	
-	//-----------추가 구현 사항-----------//
+
 	
 	public void setCategory(String category) {
 		this.category = category;
@@ -78,6 +80,8 @@ public class Photo {
 	public String getImageFileName() {
 		return this.imageFileName;
 	}
+
+
 	
 }
 
